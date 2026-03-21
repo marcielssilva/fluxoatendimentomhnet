@@ -36,6 +36,7 @@ export function FlowchartView() {
         <h3 className="font-semibold text-blue-900 mb-2">🔵 Fluxo Técnico Completo</h3>
         <p className="text-sm text-blue-800">
           Suporte, Configuração, Telefonia e Mudanças Estruturais
+			<p><spam>💰 <strong>SEMPRE</strong> Verificar pendencias Financeiras </spam></p>
         </p>
       </div>
 
