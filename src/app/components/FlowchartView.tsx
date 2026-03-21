@@ -770,9 +770,9 @@ const getRetencaoContent = () => (
     <div className="relative min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-3">🔄 Fluxograma MHNET</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-3">Ⓜ️ MHNET | MANUAL DO ATENDIMENTO N1</h1>
           <p className="text-gray-600">
-            Versão Atualizada - Procedimentos Completos de Atendimento
+            Procedimentos Completos de Atendimento
           </p>
         </div>
 
