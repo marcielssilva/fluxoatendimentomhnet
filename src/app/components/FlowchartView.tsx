@@ -395,10 +395,11 @@ export function FlowchartView() {
     <div className="bg-orange-50 border-l-4 border-orange-500 p-4 rounded">
       <h3 className="font-semibold text-orange-900 mb-2">🟠 Fluxo Financeiro</h3>
       <p className="text-sm text-orange-800">
-        Bloqueios, Faturamento, Pagamentos e Crédito
+        Bloqueios, Faturamento
       </p>
     </div>
 
+    {/* Link Geral Financeiro */}
     <div className="bg-white border-2 border-orange-300 rounded-lg p-4">
       <h3 className="font-semibold text-orange-900 mb-3 text-center">
         📊 Material Geral Financeiro
@@ -410,6 +411,7 @@ export function FlowchartView() {
       </div>
     </div>
 
+    {/* 4.1 BLOQUEIOS */}
     <div className="bg-red-50 border-2 border-red-300 rounded-lg p-4">
       <h3 className="font-semibold text-red-900 mb-3 flex items-center gap-2">
         <Lock className="size-5" />
@@ -431,13 +433,14 @@ export function FlowchartView() {
         </div>
 
         <div className="flex justify-center">
-          <h3 className="font-semibold text-orange-900 mb-3 text-center">
-            📊 Treinamento Bloqueio - Em Breve
-          </h3>
+          <TrainingLink href="https://drive.google.com/file/d/1mdC-y7EHmI8XI6R2sdu6MB4RMfuINsb-/view?usp=share_link">
+            🔗 Treinamento - Bloqueios
+          </TrainingLink>
         </div>
       </div>
     </div>
 
+    {/* 4.2 FATURAMENTO */}
     <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-4">
       <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
         <FileText className="size-5" />
@@ -452,9 +455,9 @@ export function FlowchartView() {
       </div>
 
       <div className="flex justify-center">
-        <h3 className="font-semibold text-orange-900 mb-3 text-center">
-          📊 Treinamento Faturamento - Em Breve
-        </h3>
+        <TrainingLink href="https://drive.google.com/file/d/1t105iGODbYLFxng0QxQV4E8t64MLA_g0/view?usp=sharing">
+          🔗 Treinamento - Faturamento
+        </TrainingLink>
       </div>
     </div>
   </div>
