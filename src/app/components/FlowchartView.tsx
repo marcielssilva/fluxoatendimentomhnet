@@ -431,9 +431,7 @@ export function FlowchartView() {
           </div>
 
           <div className="flex justify-center">
-            <TrainingLink href="https://drive.google.com/file/d/1mdC-y7EHmI8XI6R2sdu6MB4RMfuINsb-/view?usp=share_link">
-              🔗 Treinamento - Bloqueios
-            </TrainingLink>
+            <h3 className="font-semibold text-orange-900 mb-3 text-center">📊 Treinamento Bloqueio - Em Breve</h3>
           </div>
         </div>
       </div>
@@ -453,9 +451,9 @@ export function FlowchartView() {
         </div>
 
         <div className="flex justify-center">
-          <TrainingLink href="https://drive.google.com/file/d/1t105iGODbYLFxng0QxQV4E8t64MLA_g0/view?usp=sharing">
-            🔗 Treinamento - Faturamento
-          </TrainingLink>
+          <div className="flex justify-center">
+            <h3 className="font-semibold text-orange-900 mb-3 text-center">📊 Treinamento Faturamento - Em Breve</h3>
+          </div>
         </div>
       </div>
 
@@ -474,9 +472,9 @@ export function FlowchartView() {
         </div>
 
         <div className="flex justify-center">
-          <TrainingLink href="https://drive.google.com/file/d/1Jvyctn-6C9drl0anvmn21QyV-g1Uyj9d/view?usp=sharing">
-            🔗 Treinamento - Pagamentos
-          </TrainingLink>
+          <div className="flex justify-center">
+            <h3 className="font-semibold text-orange-900 mb-3 text-center">📊 Treinamento  Pagamentos - Em Breve</h3>
+          </div>
         </div>
       </div>
 
@@ -495,9 +493,9 @@ export function FlowchartView() {
         </div>
 
         <div className="flex justify-center">
-          <TrainingLink href="https://drive.google.com/file/d/1bvGCZZ3NZMX8wyInONa92FQ5-III__2g/view?usp=share_link">
-            🔗 Treinamento - Crédito
-          </TrainingLink>
+          <div className="flex justify-center">
+            <h3 className="font-semibold text-orange-900 mb-3 text-center">📊 Treinamento Crédito - Em Breve</h3>
+          </div>
         </div>
       </div>
     </div>
