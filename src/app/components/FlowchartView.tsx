@@ -336,16 +336,17 @@ export function FlowchartView() {
       </div>
 
       {/* 3.6 MUDANÇA DE ENDEREÇO */}
-      <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-4">
-        <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
-          <Home className="size-5" />
-          🏠 3.6 Mudança de Endereço
-        </h3>
+<div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-4">
+  <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
+    <Home className="size-5" />
+    🏠 3.6 Mudança de Endereço
+  </h3>
 
-		  <ProcessCard
+  <div className="mt-4">
+    <ProcessCard
       title="Validação e tratativa inicial"
-      icon={<MapPinHouse className="w-4 h-4" />}
-      color="cyan"
+      icon={<Home className="w-4 h-4" />}
+      color="blue"
       steps={[
         'Confirmar com o cliente o endereço atual e o novo endereço completo',
         'Validar a viabilidade técnica no novo local de instalação',
@@ -358,7 +359,9 @@ export function FlowchartView() {
         'Informar ao cliente os próximos passos e prazo de atendimento',
       ]}
     />
-		  <div className="mt-4">
+  </div>
+
+  <div className="mt-4">
     <ProcessCard
       title="Orientações importantes"
       icon={<AlertCircle className="w-4 h-4" />}
@@ -374,72 +377,76 @@ export function FlowchartView() {
       ]}
     />
   </div>
-		  
-        <div className="space-y-4">
-          <div className="bg-white border-l-4 border-blue-500 p-3 rounded">
-            <h4 className="font-semibold text-blue-900 mb-2 text-sm">💰 Regras</h4>
-            <p className="text-sm text-blue-800">
-              • Taxa padrão: <strong>R$ 100,00</strong>
-            </p>
-            <p className="text-sm text-blue-800">
-              • Excedente: <strong>R$ 1,50/m</strong> acima de 150m
-            </p>
-            <p className="text-sm text-blue-800">
-              • Parcelamento: <strong>2x de R$ 50,00</strong>
-            </p>
+
+  <div className="mt-4 space-y-4">
+    <div className="bg-white border-l-4 border-blue-500 p-3 rounded">
+      <h4 className="font-semibold text-blue-900 mb-2 text-sm">💰 Regras</h4>
+      <p className="text-sm text-blue-800">
+        • Taxa padrão: <strong>R$ 100,00</strong>
+      </p>
+      <p className="text-sm text-blue-800">
+        • Excedente: <strong>R$ 1,50/m</strong> acima de 150m
+      </p>
+      <p className="text-sm text-blue-800">
+        • Parcelamento: <strong>2x de R$ 50,00</strong>
+      </p>
+    </div>
+
+    <div className="bg-yellow-50 border-l-4 border-yellow-500 p-3 rounded">
+      <h4 className="font-semibold text-yellow-900 mb-2 text-sm">📊 Isenção</h4>
+      <div className="space-y-2 text-sm text-yellow-800">
+        <div className="flex items-start gap-2">
+          <XCircle className="size-4 mt-0.5 flex-shrink-0" />
+          <div>
+            <strong>❌ {'<'} 6 meses →</strong> sem isenção
           </div>
+        </div>
 
-          <div className="bg-yellow-50 border-l-4 border-yellow-500 p-3 rounded">
-            <h4 className="font-semibold text-yellow-900 mb-2 text-sm">📊 Isenção</h4>
-            <div className="space-y-2 text-sm text-yellow-800">
-              <div className="flex items-start gap-2">
-                <XCircle className="size-4 mt-0.5 flex-shrink-0" />
-                <div>
-                  <strong>❌ {'<'} 6 meses →</strong> sem isenção
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <AlertTriangle className="size-4 mt-0.5 flex-shrink-0" />
-                <div>
-                  <strong>⚠️ 6–11 meses →</strong> 50%
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <CheckCircle2 className="size-4 mt-0.5 flex-shrink-0" />
-                <div>
-                  <strong>✅ 12+ meses →</strong> isento (com critérios)
-                </div>
-              </div>
-            </div>
+        <div className="flex items-start gap-2">
+          <AlertTriangle className="size-4 mt-0.5 flex-shrink-0" />
+          <div>
+            <strong>⚠️ 6–11 meses →</strong> 50%
           </div>
+        </div>
 
-          <ProcessCard
-            title="🔄 Processo"
-            icon={<MapPin className="size-5" />}
-            color="blue"
-            steps={[
-              'Informar valores',
-              'Verificar ERP',
-              'Refidelização (se aplicável)',
-              'Confirmar endereço',
-              'Abrir solicitação',
-            ]}
-          />
-
-          <div className="bg-red-50 border-l-4 border-red-500 p-3 rounded">
-            <h4 className="font-semibold text-red-900 mb-2 text-sm">⚠️ Exceção</h4>
-            <p className="text-sm text-red-800">
-              ➡️ Cliente não aceita valor → <strong>Retenção para continuar tratativa para evitar cancelamento</strong>
-            </p>
-          </div>
-
-          <div className="flex justify-center">
-            <TrainingLink href="https://docs.google.com/presentation/d/1WNziUMowWm4pRuA_oE3VS9hSOvN_dA_H2KZK38ePUdg/edit">
-              🔗 Treinamento - Mudança de Endereço
-            </TrainingLink>
+        <div className="flex items-start gap-2">
+          <CheckCircle2 className="size-4 mt-0.5 flex-shrink-0" />
+          <div>
+            <strong>✅ 12+ meses →</strong> isento (com critérios)
           </div>
         </div>
       </div>
+    </div>
+
+    <div className="mt-4">
+      <ProcessCard
+        title="Processo"
+        icon={<MapPin className="size-5" />}
+        color="blue"
+        steps={[
+          'Informar valores',
+          'Verificar ERP',
+          'Refidelização (se aplicável)',
+          'Confirmar endereço',
+          'Abrir solicitação',
+        ]}
+      />
+    </div>
+
+    <div className="bg-red-50 border-l-4 border-red-500 p-3 rounded">
+      <h4 className="font-semibold text-red-900 mb-2 text-sm">⚠️ Exceção</h4>
+      <p className="text-sm text-red-800">
+        ➡️ Cliente não aceita valor → <strong>Retenção para continuar tratativa para evitar cancelamento</strong>
+      </p>
+    </div>
+
+    <div className="flex justify-center">
+      <TrainingLink href="https://docs.google.com/presentation/d/1WNziUMowWm4pRuA_oE3VS9hSOvN_dA_H2KZK38ePUdg/edit">
+        🔗 Treinamento - Mudança de Endereço
+      </TrainingLink>
+    </div>
+  </div>
+</div>
 
       {/* 3.7 MUDANÇA DE PONTO INTERNO */}
       <div className="bg-orange-50 border-2 border-orange-300 rounded-lg p-4">
