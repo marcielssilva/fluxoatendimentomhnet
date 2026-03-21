@@ -95,34 +95,29 @@ export function FlowchartView() {
       </div>
 
       {/* 3.2 LENTIDÃO */}
-<div className="bg-yellow-50 border-2 border-yellow-300 rounded-lg p-4">
-  <h3 className="font-semibold text-yellow-900 mb-3 flex items-center gap-2">
-    <TrendingDown className="size-5" />
-    🐢 3.2 Lentidão
-  </h3>
+      <div className="bg-yellow-50 border-2 border-yellow-300 rounded-lg p-4">
+        <h3 className="font-semibold text-yellow-900 mb-3 flex items-center gap-2">
+          <TrendingDown className="size-5" />
+          🐢 3.2 Lentidão
+        </h3>
+        
+        <ProcessCard
+          title="Validação e tratativa inicial"
+          icon={<Settings className="size-5" />}
+          color="yellow"
+          steps={[
+            'Verificar cabos',
+            'Teste cabo/Wi-Fi',
+            'Acesso remoto',
+            'Ajustes (Huawei / Flashman)',
+            '➡️ Persistindo → Visita técnica',
+          ]}
+        />
 
-  <div className="mt-4">
-    <ProcessCard
-      title="Validação e tratativa inicial"
-      icon={<Wifi className="w-4 h-4" />}
-      color="yellow"
-      steps={[
-        'Confirmar com o cliente se a lentidão ocorre em todos os dispositivos ou apenas em um equipamento',
-        'Validar se o teste foi realizado via cabo e via Wi-Fi',
-        'Orientar teste de velocidade próximo ao roteador/ONU, sem uso simultâneo intenso',
-        'Verificar cabos, conectores e reinicialização do equipamento',
-        'Realizar acesso remoto e validar consumo, sinal e estabilidade da conexão',
-        'Aplicar ajustes básicos no equipamento/roteador quando disponível (Huawei / Flashman)',
-        'Se houver normalização, confirmar navegação e teste final com o cliente',
-        '➡️ Persistindo a falha → Encaminhar para visita técnica',
-      ]}
-    />
-  </div>
-
-  <div className="mt-4">
-    <ProcessCard
+        <div className="mt-4">
+          <ProcessCard
       title="Orientações importantes"
-      icon={<Info className="w-4 h-4" />}
+      icon={<Wrench className="w-4 h-4" />}
       color="purple"
       steps={[
         'Priorizar teste cabeado para diferenciar problema de Wi-Fi e problema de link',
@@ -134,22 +129,22 @@ export function FlowchartView() {
         'Sempre registrar no atendimento como o teste foi realizado e qual foi o resultado informado pelo cliente',
       ]}
     />
-  </div>
+        </div>
 
-  <div className="mt-4 flex flex-col gap-2">
-    <TrainingLink href="https://drive.google.com/file/d/1CK1rd6kSxggA6szUAjz2PzqcS14evP_9/view?usp=sharing">
-      🔗 Acesso Remoto
-    </TrainingLink>
+        
 
-    <TrainingLink href="https://drive.google.com/file/d/1ikQ2KlVaJI2UQtWBPzklPo6MU8CrkP-C/view?usp=sharing">
-      🔗 Configuração Huawei / TP - LINK
-    </TrainingLink>
-
-    <TrainingLink href="https://drive.google.com/file/d/1Dofnz7px2acaLF8C4qbyfkN7OdktFsFa/view?usp=sharing">
-      🔗 Flashman
-    </TrainingLink>
-  </div>
-</div>
+        <div className="mt-4 flex flex-col gap-2">
+          <TrainingLink href="https://drive.google.com/file/d/1CK1rd6kSxggA6szUAjz2PzqcS14evP_9/view?usp=sharing">
+            🔗 Acesso Remoto
+          </TrainingLink>
+          <TrainingLink href="https://drive.google.com/file/d/1ikQ2KlVaJI2UQtWBPzklPo6MU8CrkP-C/view?usp=sharing">
+            🔗 Configuração Huawei
+          </TrainingLink>
+          <TrainingLink href="https://drive.google.com/file/d/1Dofnz7px2acaLF8C4qbyfkN7OdktFsFa/view?usp=sharing">
+            🔗 Flashman
+          </TrainingLink>
+        </div>
+      </div>
 
       {/* 3.3 VIA RÁDIO */}
       <div className="bg-purple-50 border-2 border-purple-300 rounded-lg p-4">
