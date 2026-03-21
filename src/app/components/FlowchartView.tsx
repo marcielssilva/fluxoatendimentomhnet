@@ -203,14 +203,37 @@ export function FlowchartView() {
         </h3>
         
         <ProcessCard
-          title="Procedimentos Gerais"
-          icon={<Settings className="size-5" />}
-          color="blue"
-          steps={[
-            'Liberação de portas',
-            'Ajustes de rede',
-          ]}
-        />
+      title="Validação e tratativa inicial"
+      icon={<Settings className="w-4 h-4" />}
+      color="blue"
+      steps={[
+        'Identificar a necessidade do cliente: abertura de porta, troca de senha, ajuste de DNS ou configuração de rede',
+        'Confirmar modelo do equipamento (ONU / roteador) e acesso disponível (remoto ou local)',
+        'Validar se o cliente possui acesso ao equipamento ou se será necessário suporte remoto',
+        'Realizar acesso remoto quando disponível (Flashman, Huawei, etc)',
+        'Para abertura de porta: coletar porta, IP interno e tipo de protocolo (TCP/UDP)',
+        'Para troca de senha: orientar padrão de segurança e aplicar alteração no Wi-Fi',
+        'Para DNS: validar necessidade e aplicar DNS adequado conforme cenário',
+        'Aplicar ajustes necessários e salvar configurações',
+        'Solicitar teste com o cliente para validar funcionamento após alteração',
+      ]}
+    />
+		  <div className="mt-4">
+    <ProcessCard
+      title="Orientações importantes"
+      icon={<AlertCircle className="w-4 h-4" />}
+      color="purple"
+      steps={[
+        'Sempre confirmar com o cliente qual equipamento está sendo configurado',
+        'Em abertura de porta, garantir que o dispositivo esteja com IP fixo na rede',
+        'Validar se não há CGNAT antes de seguir com abertura de porta',
+        'Evitar múltiplas alterações simultâneas sem validação do cliente',
+        'Orientar o cliente a guardar a nova senha após alteração',
+        'Em caso de dúvidas ou limitações técnicas, escalar para o setor responsável',
+        'Registrar detalhadamente no atendimento todas as alterações realizadas',
+      ]}
+    />
+  </div>
 
         <div className="mt-4 flex justify-center">
           <TrainingLink href="https://drive.google.com/file/d/1Sffq4yxYJ5fyMjRPT5o-eENnRedOVKsN/view?usp=sharing">
