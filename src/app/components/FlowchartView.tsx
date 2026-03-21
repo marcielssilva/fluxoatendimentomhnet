@@ -341,7 +341,40 @@ export function FlowchartView() {
           <Home className="size-5" />
           🏠 3.6 Mudança de Endereço
         </h3>
-        
+
+		  <ProcessCard
+      title="Validação e tratativa inicial"
+      icon={<MapPinHouse className="w-4 h-4" />}
+      color="cyan"
+      steps={[
+        'Confirmar com o cliente o endereço atual e o novo endereço completo',
+        'Validar a viabilidade técnica no novo local de instalação',
+        'Confirmar se o cliente deseja apenas mudança de endereço ou se haverá alteração adicional no serviço',
+        'Orientar o cliente sobre a cobrança da taxa de mudança de endereço, quando aplicável',
+        'Verificar se o cliente possui isenção da taxa de mudança de endereço',
+        'Caso o cliente possua isenção, abrir protocolo para o financeiro solicitando a isenção da taxa',
+        'Registrar corretamente no atendimento todos os dados do novo endereço',
+        'Seguir com a abertura da solicitação conforme procedimento interno',
+        'Informar ao cliente os próximos passos e prazo de atendimento',
+      ]}
+    />
+		  <div className="mt-4">
+    <ProcessCard
+      title="Orientações importantes"
+      icon={<AlertCircle className="w-4 h-4" />}
+      color="purple"
+      steps={[
+        'Sempre confirmar ponto de referência, número, bairro e complemento do novo endereço',
+        'Antes de seguir com a solicitação, validar se há cobertura no novo local',
+        'Quando houver isenção, o protocolo para o financeiro deve ser aberto no mesmo atendimento',
+        'Registrar no histórico que a isenção foi solicitada, para evitar cobranças indevidas',
+        'Se houver inviabilidade técnica no novo endereço, orientar o cliente de forma clara e registrar a informação',
+        'Evitar concluir a solicitação com dados incompletos ou sem conferência do endereço',
+        'Confirmar com o cliente telefone de contato atualizado para retorno e agendamento',
+      ]}
+    />
+  </div>
+		  
         <div className="space-y-4">
           <div className="bg-white border-l-4 border-blue-500 p-3 rounded">
             <h4 className="font-semibold text-blue-900 mb-2 text-sm">💰 Regras</h4>
@@ -396,7 +429,7 @@ export function FlowchartView() {
           <div className="bg-red-50 border-l-4 border-red-500 p-3 rounded">
             <h4 className="font-semibold text-red-900 mb-2 text-sm">⚠️ Exceção</h4>
             <p className="text-sm text-red-800">
-              ➡️ Cliente não aceita valor → <strong>Retenção</strong>
+              ➡️ Cliente não aceita valor → <strong>Retenção para continuar tratativa para evitar cancelamento</strong>
             </p>
           </div>
 
