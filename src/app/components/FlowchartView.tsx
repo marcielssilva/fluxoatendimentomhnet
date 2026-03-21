@@ -448,7 +448,7 @@ export function FlowchartView() {
   </div>
 </div>
 
-      {/* 3.7 MUDANÇA DE PONTO INTERNO */}
+      {/* 3.7 MUDANÇA DE PONTO INTERNO / PONTO CABEADO */}
       <div className="bg-orange-50 border-2 border-orange-300 rounded-lg p-4">
         <h3 className="font-semibold text-orange-900 mb-3 flex items-center gap-2">
           <MapPin className="size-5" />
@@ -493,7 +493,7 @@ export function FlowchartView() {
           <div className="bg-red-50 border-l-4 border-red-500 p-3 rounded">
             <h4 className="font-semibold text-red-900 mb-2 text-sm">⚠️ Exceção</h4>
             <p className="text-sm text-red-800">
-              ➡️ Cliente não aceita valor → <strong>Retenção</strong>
+              ➡️ Cliente não aceita valor → <strong>Retenção para continuar tratativa para evitar cancelamento</strong>
             </p>
           </div>
         </div>
