@@ -648,9 +648,9 @@ export function FlowchartView() {
     </div>
   );
 
-  const getRetencaoContent = () => (
+ const getRetencaoContent = () => (
+  <div className="space-y-6">
     {/* RETENÇÃO */}
-<div className="space-y-6">
   <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
     <h3 className="font-semibold text-red-900 mb-2">🔴 Fluxo de Retenção</h3>
     <p className="text-sm text-red-800">
