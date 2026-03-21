@@ -47,28 +47,35 @@ export function FlowchartView() {
         </h3>
         
         <ProcessCard
-          title="Diagnóstico"
-          icon={<AlertCircle className="size-5" />}
-          color="red"
-          steps={[
-            'Verificar cabos',
-            'LEDs da ONU',
-            'Queda total',
-          ]}
-        />
+  title="Validação inicial"
+  icon={<WifiOff className="w-4 h-4" />}
+  color="red"
+  steps={[
+    'Confirmar se a queda é total',
+    'Validar cabos de energia e fibra/rede',
+    'Verificar LED Power, PON e LOS da ONU',
+    'Confirmar se o equipamento foi reiniciado',
+    'Validar se o cliente testou conexão cabeada, quando possível',
+  ]}
+/>
 
-        <div className="mt-4">
-          <ProcessCard
-            title="Ações"
-            icon={<Wrench className="size-5" />}
-            color="blue"
-            steps={[
-              'Análise de sinal',
-              'Testes básicos',
-              '➡️ Se necessário → Visita técnica',
-            ]}
-          />
-        </div>
+<ProcessCard
+  title="Análise e tratativa"
+  icon={<Wrench className="w-4 h-4" />}
+  color="blue"
+  steps={[
+    'Analisar sinal e status do equipamento',
+    'Verificar indisponibilidade/massiva na região',
+    'Aplicar testes básicos e acesso remoto, se disponível',
+    'Se normalizar, orientar cliente e confirmar funcionamento',
+    '➡️ Persistindo a falha → Encaminhar para visita técnica',
+  ]}
+/>
+
+#### ✅ Orientações importantes
+• Se LED LOS estiver vermelho/piscando, priorizar análise de fibra/sinal  
+• Se houver parada geral/regional, informar indisponibilidade ao cliente  
+• Sempre confirmar no final se a conexão voltou antes de encerrar o atendimento  
 
         <div className="mt-4 flex justify-center">
           <TrainingLink href="https://drive.google.com/file/d/18Otbn-FaeE-ZHeOHOk46ghMA_jlYL1My/view?usp=sharing">
