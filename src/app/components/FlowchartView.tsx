@@ -456,49 +456,6 @@ export function FlowchartView() {
           </div>
         </div>
       </div>
-
-      {/* 4.3 PAGAMENTOS */}
-      <div className="bg-green-50 border-2 border-green-300 rounded-lg p-4">
-        <h3 className="font-semibold text-green-900 mb-3 flex items-center gap-2">
-          <CreditCard className="size-5" />
-          🏦 4.3 Pagamentos
-        </h3>
-        
-        <div className="bg-white border-l-4 border-green-500 p-3 rounded mb-4">
-          <div className="space-y-1 text-sm text-green-800">
-            <p>• Débito em conta</p>
-            <p>• Baixas</p>
-          </div>
-        </div>
-
-        <div className="flex justify-center">
-          <div className="flex justify-center">
-            <h3 className="font-semibold text-orange-900 mb-3 text-center">📊 Treinamento  Pagamentos - Em Breve</h3>
-          </div>
-        </div>
-      </div>
-
-      {/* 4.4 CRÉDITO */}
-      <div className="bg-yellow-50 border-2 border-yellow-300 rounded-lg p-4">
-        <h3 className="font-semibold text-yellow-900 mb-3 flex items-center gap-2">
-          <AlertTriangle className="size-5" />
-          🚫 4.4 Crédito
-        </h3>
-        
-        <div className="bg-white border-l-4 border-yellow-500 p-3 rounded mb-4">
-          <div className="space-y-1 text-sm text-yellow-800">
-            <p>• Códigos de erro</p>
-            <p>• Tratativas</p>
-          </div>
-        </div>
-
-        <div className="flex justify-center">
-          <div className="flex justify-center">
-            <h3 className="font-semibold text-orange-900 mb-3 text-center">📊 Treinamento Crédito - Em Breve</h3>
-          </div>
-        </div>
-      </div>
-    </div>
   );
 
   const getRetencaoContent = () => (
