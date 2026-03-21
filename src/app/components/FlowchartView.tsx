@@ -624,6 +624,8 @@ export function FlowchartView() {
     </TrainingLink>
   </div>
 </div>
+
+);
   const getRetencaoContent = () => (
     <div className="space-y-6">
       <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
