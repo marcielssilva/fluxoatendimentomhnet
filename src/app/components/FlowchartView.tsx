@@ -100,8 +100,7 @@ export function FlowchartView() {
           <TrendingDown className="size-5" />
           🐢 3.2 Lentidão
         </h3>
-        
-        <div className="mt-4">
+		  
   <ProcessCard
     title="Validação e tratativa inicial"
     icon={<Wifi className="w-4 h-4" />}
@@ -117,7 +116,6 @@ export function FlowchartView() {
       '➡️ Persistindo a falha → Encaminhar para visita técnica',
     ]}
   />
-</div>
 
 <div className="mt-4">
   <ProcessCard
@@ -136,7 +134,7 @@ export function FlowchartView() {
   />
 </div>
 
-        <div className="mt-4 flex flex-col gap-2">
+<div className="mt-4 flex flex-col gap-2">
           <TrainingLink href="https://drive.google.com/file/d/1CK1rd6kSxggA6szUAjz2PzqcS14evP_9/view?usp=sharing">
             🔗 Acesso Remoto
           </TrainingLink>
@@ -146,8 +144,7 @@ export function FlowchartView() {
           <TrainingLink href="https://drive.google.com/file/d/1Dofnz7px2acaLF8C4qbyfkN7OdktFsFa/view?usp=sharing">
             🔗 Flashman
           </TrainingLink>
-        </div>
-      </div>
+</div>
 
       {/* 3.3 VIA RÁDIO */}
       <div className="bg-purple-50 border-2 border-purple-300 rounded-lg p-4">
