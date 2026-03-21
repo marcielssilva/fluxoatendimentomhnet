@@ -132,7 +132,8 @@ export function FlowchartView() {
       'Sempre registrar no atendimento como o teste foi realizado e qual foi o resultado informado pelo cliente',
     ]}
   />
-</div>
+	</div>
+		  
 
 <div className="mt-4 flex flex-col gap-2">
           <TrainingLink href="https://drive.google.com/file/d/1CK1rd6kSxggA6szUAjz2PzqcS14evP_9/view?usp=sharing">
@@ -144,6 +145,7 @@ export function FlowchartView() {
           <TrainingLink href="https://drive.google.com/file/d/1Dofnz7px2acaLF8C4qbyfkN7OdktFsFa/view?usp=sharing">
             🔗 Flashman
           </TrainingLink>
+	</div>
 </div>
 
       {/* 3.3 VIA RÁDIO */}
