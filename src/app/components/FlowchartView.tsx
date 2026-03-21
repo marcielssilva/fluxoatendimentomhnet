@@ -59,7 +59,8 @@ export function FlowchartView() {
   ]}
 />
 
-<ProcessCard
+<div className="mt-4">
+	<ProcessCard
   title="Análise e tratativa"
   icon={<Wrench className="w-4 h-4" />}
   color="blue"
@@ -71,11 +72,20 @@ export function FlowchartView() {
     '➡️ Persistindo a falha → Encaminhar para visita técnica',
   ]}
 />
+</div>
 
-#### ✅ Orientações importantes
-• Se LED LOS estiver vermelho/piscando, priorizar análise de fibra/sinal  
-• Se houver parada geral/regional, informar indisponibilidade ao cliente  
-• Sempre confirmar no final se a conexão voltou antes de encerrar o atendimento  
+<div className="mt-4">
+	<ProcessCard
+            title="✅ Orientações importantes"
+            icon={<Wrench className="size-5" />}
+            color="yellow"
+            steps={[
+              'Se LED LOS estiver vermelho/piscando, priorizar análise de fibra/sinal',
+              'Se houver parada geral/regional, informar indisponibilidade ao cliente',
+              'Sempre confirmar no final se a conexão voltou antes de encerrar o atendimento',
+            ]}
+          />
+</div>  
 
         <div className="mt-4 flex justify-center">
           <TrainingLink href="https://drive.google.com/file/d/18Otbn-FaeE-ZHeOHOk46ghMA_jlYL1My/view?usp=sharing">
