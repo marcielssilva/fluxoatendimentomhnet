@@ -125,13 +125,14 @@ export function FlowchartView() {
             'Validação de sinal',
             'Interferência',
             '➡️ Ajuste ou visita',
+            'Treinamento - Via Rádio - Em breve'
           ]}
         />
 
         <div className="mt-4 flex justify-center">
-          <TrainingLink href="https://drive.google.com/file/d/1baUukMwy8oM7t1LtsNd6-uoAOHKsTb0r/view?usp=share_link">
-            🔗 Treinamento - Via Rádio
-          </TrainingLink>
+          <div className="bg-white p-3 rounded border border-purple-200">
+            <h4 className="font-semibold text-purple-900 mb-2 text-sm">⚙️ TREINAMENTO RADIO - Em Breve Material</h4>
+          </div>
         </div>
       </div>
 
