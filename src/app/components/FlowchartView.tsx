@@ -297,7 +297,7 @@ export function FlowchartView() {
           <div className="bg-orange-100 border border-orange-300 p-3 rounded">
             <h4 className="font-semibold text-orange-900 mb-2 text-sm">💰 Regras</h4>
             <p className="text-sm text-orange-800">
-              • Taxa padrão: <strong>R$ 100,00</strong>
+              • Taxa padrão: <strong>R$ 150,00</strong>
             </p>
             <p className="text-sm text-orange-800">
               • Possível excedente de cabo
