@@ -647,8 +647,7 @@ export function FlowchartView() {
       </div>
     </div>
   );
-
- const getRetencaoContent = () => (
+const getRetencaoContent = () => (
   <div className="space-y-6">
     {/* RETENÇÃO */}
   <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
