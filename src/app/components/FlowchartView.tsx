@@ -391,72 +391,74 @@ export function FlowchartView() {
   );
 
   const getFinanceiroContent = () => (
-    <div className="space-y-6">
-      <div className="bg-orange-50 border-l-4 border-orange-500 p-4 rounded">
-        <h3 className="font-semibold text-orange-900 mb-2">🟠 Fluxo Financeiro</h3>
-        <p className="text-sm text-orange-800">
-          Bloqueios, Faturamento, Pagamentos e Crédito
-        </p>
+  <div className="space-y-6">
+    <div className="bg-orange-50 border-l-4 border-orange-500 p-4 rounded">
+      <h3 className="font-semibold text-orange-900 mb-2">🟠 Fluxo Financeiro</h3>
+      <p className="text-sm text-orange-800">
+        Bloqueios, Faturamento, Pagamentos e Crédito
+      </p>
+    </div>
+
+    <div className="bg-white border-2 border-orange-300 rounded-lg p-4">
+      <h3 className="font-semibold text-orange-900 mb-3 text-center">
+        📊 Material Geral Financeiro
+      </h3>
+      <div className="flex justify-center">
+        <TrainingLink href="https://docs.google.com/spreadsheets/d/1sMv4iIdCgKdP-dLo_3Figf-lNXcYkvxNmv1Ic3gx8fE/edit?usp=sharing">
+          🔗 Planilha Financeiro Completa
+        </TrainingLink>
       </div>
+    </div>
 
-      {/* Link Geral Financeiro */}
-      <div className="bg-white border-2 border-orange-300 rounded-lg p-4">
-        <h3 className="font-semibold text-orange-900 mb-3 text-center">📊 Material Geral Financeiro</h3>
-        <div className="flex justify-center">
-          <TrainingLink href="https://docs.google.com/spreadsheets/d/1sMv4iIdCgKdP-dLo_3Figf-lNXcYkvxNmv1Ic3gx8fE/edit?usp=sharing">
-            🔗 Planilha Financeiro Completa
-          </TrainingLink>
-        </div>
-      </div>
+    <div className="bg-red-50 border-2 border-red-300 rounded-lg p-4">
+      <h3 className="font-semibold text-red-900 mb-3 flex items-center gap-2">
+        <Lock className="size-5" />
+        💰 4.1 Bloqueios
+      </h3>
 
-      {/* 4.1 BLOQUEIOS */}
-      <div className="bg-red-50 border-2 border-red-300 rounded-lg p-4">
-        <h3 className="font-semibold text-red-900 mb-3 flex items-center gap-2">
-          <Lock className="size-5" />
-          💰 4.1 Bloqueios
-        </h3>
-        
-        <div className="space-y-3">
-          <div className="bg-white border-l-4 border-red-500 p-3 rounded">
-            <div className="space-y-1 text-sm text-red-800">
-              <p>• Financeiro</p>
-              <p>• Administrativo</p>
-            </div>
-          </div>
-
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-3 rounded">
-            <h4 className="font-semibold text-blue-900 mb-2 text-sm">➡️ Ação</h4>
-            <p className="text-sm text-blue-800">• Validar comprovante</p>
-            <p className="text-sm text-blue-800">• Liberar acesso</p>
-          </div>
-
-          <div className="flex justify-center">
-            <h3 className="font-semibold text-orange-900 mb-3 text-center">📊 Treinamento Bloqueio - Em Breve</h3>
+      <div className="space-y-3">
+        <div className="bg-white border-l-4 border-red-500 p-3 rounded">
+          <div className="space-y-1 text-sm text-red-800">
+            <p>• Financeiro</p>
+            <p>• Administrativo</p>
           </div>
         </div>
-      </div>
 
-      {/* 4.2 FATURAMENTO */}
-      <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-4">
-        <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
-          <FileText className="size-5" />
-          🧾 4.2 Faturamento
-        </h3>
-        
-        <div className="bg-white border-l-4 border-blue-500 p-3 rounded mb-4">
-          <div className="space-y-1 text-sm text-blue-800">
-            <p>• Correção de cobranças</p>
-            <p>• Ajustes</p>
-          </div>
+        <div className="bg-blue-50 border-l-4 border-blue-500 p-3 rounded">
+          <h4 className="font-semibold text-blue-900 mb-2 text-sm">➡️ Ação</h4>
+          <p className="text-sm text-blue-800">• Validar comprovante</p>
+          <p className="text-sm text-blue-800">• Liberar acesso</p>
         </div>
 
         <div className="flex justify-center">
-          <div className="flex justify-center">
-            <h3 className="font-semibold text-orange-900 mb-3 text-center">📊 Treinamento Faturamento - Em Breve</h3>
-          </div>
+          <h3 className="font-semibold text-orange-900 mb-3 text-center">
+            📊 Treinamento Bloqueio - Em Breve
+          </h3>
         </div>
       </div>
-  );
+    </div>
+
+    <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-4">
+      <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
+        <FileText className="size-5" />
+        🧾 4.2 Faturamento
+      </h3>
+
+      <div className="bg-white border-l-4 border-blue-500 p-3 rounded mb-4">
+        <div className="space-y-1 text-sm text-blue-800">
+          <p>• Correção de cobranças</p>
+          <p>• Ajustes</p>
+        </div>
+      </div>
+
+      <div className="flex justify-center">
+        <h3 className="font-semibold text-orange-900 mb-3 text-center">
+          📊 Treinamento Faturamento - Em Breve
+        </h3>
+      </div>
+    </div>
+  </div>
+);
 
   const getRetencaoContent = () => (
     <div className="space-y-6">
