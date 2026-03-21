@@ -568,62 +568,62 @@ export function FlowchartView() {
 		  </div> 
 
 		  <div className="mt-4">
-    <ProcessCard
-      title="Atendimentos financeiros"
-      icon={<DollarSign className="w-4 h-4" />}
-      color="emerald"
-      steps={[
-        'Identificar a solicitação do cliente: boleto, pagamento, bloqueio, negociação ou dúvidas de faturamento',
-        'Validar situação financeira do cliente no sistema (faturas em aberto, vencimentos, histórico)',
-        'Confirmar com o cliente qual é a dúvida ou solicitação específica',
-        'Orientar o cliente conforme a situação identificada',
-        'Quando necessário, encaminhar para o setor responsável com as informações completas',
-      ]}
-    />
-  </div>
+  <ProcessCard
+    title="Atendimentos financeiros"
+    icon={<DollarSign className="w-4 h-4" />}
+    color="emerald"
+    steps={[
+      'Identificar a solicitação do cliente: boleto, pagamento, bloqueio, negociação ou dúvidas de faturamento',
+      'Validar situação financeira do cliente no sistema (faturas em aberto, vencimentos, histórico)',
+      'Confirmar com o cliente qual é a dúvida ou solicitação específica',
+      'Orientar o cliente conforme a situação identificada',
+      'Quando necessário, encaminhar para o setor responsável com as informações completas',
+    ]}
+  />
+</div>
 
-		  <div className="mt-4">
-    <ProcessCard
-      title="Bloqueios"
-      icon={<Lock className="w-4 h-4" />}
-      color="red"
-      steps={[
-        'Bloqueio Administrativo: Quando uma fatura renegociada vence, é realizado o bloqueio do sinal, sendo liberado apenas mediante pagamento do débito',
-        'Bloqueio Financeiro: A partir do 5º dia após o vencimento da fatura, pode ocorrer bloqueio do serviço',
-        'O cliente possui direito a até 2 desbloqueios de confiança, com duração de 24 horas cada',
-        'Orientar o cliente sobre a regularização do débito para evitar novos bloqueios',
-        'Sempre registrar todo o atendimento via protocolo no ERP',
-      ]}
-    />
-  </div>
+<div className="mt-4">
+  <ProcessCard
+    title="Bloqueios"
+    icon={<Lock className="w-4 h-4" />}
+    color="red"
+    steps={[
+      'Bloqueio Administrativo: Quando uma fatura renegociada vence, é realizado o bloqueio do sinal, sendo liberado apenas mediante pagamento do débito',
+      'Bloqueio Financeiro: A partir do 5º dia após o vencimento da fatura, pode ocorrer bloqueio do serviço',
+      'O cliente possui direito a até 2 desbloqueios de confiança, com duração de 24 horas cada',
+      'Orientar o cliente sobre a regularização do débito para evitar novos bloqueios',
+      'Sempre registrar todo o atendimento via protocolo no ERP',
+    ]}
+  />
+</div>
 
-		  div className="mt-4">
-    <ProcessCard
-      title="Orientações importantes"
-      icon={<AlertCircle className="w-4 h-4" />}
-      color="purple"
-      steps={[
-        'Sempre confirmar os dados do cliente antes de informar valores ou situação financeira',
-        'Validar se há faturas vencidas antes de qualquer orientação',
-        'Registrar no atendimento todas as informações repassadas ao cliente',
-        'Evitar prometer prazos ou condições que não estejam confirmadas no sistema',
-        'Em caso de negociação ou exceção, seguir o procedimento interno ou escalar corretamente',
-      ]}
-    />
+<div className="mt-4">
+  <ProcessCard
+    title="Orientações importantes"
+    icon={<AlertCircle className="w-4 h-4" />}
+    color="purple"
+    steps={[
+      'Sempre confirmar os dados do cliente antes de informar valores ou situação financeira',
+      'Validar se há faturas vencidas antes de qualquer orientação',
+      'Registrar no atendimento todas as informações repassadas ao cliente',
+      'Evitar prometer prazos ou condições que não estejam confirmadas no sistema',
+      'Em caso de negociação ou exceção, seguir o procedimento interno ou escalar corretamente',
+    ]}
+  />
+</div>
+
+{/* Link Geral Financeiro */}
+<div className="mt-4 bg-white border-2 border-orange-300 rounded-lg p-4">
+  <h3 className="font-semibold text-orange-900 mb-3 text-center">
+    📊 Material Geral Financeiro
+  </h3>
+
+  <div className="flex justify-center">
+    <TrainingLink href="https://docs.google.com/spreadsheets/d/1sMv4iIdCgKdP-dLo_3Figf-lNXcYkvxNmv1Ic3gx8fE/edit?usp=sharing">
+      🔗 Planilha Financeiro Completa
+    </TrainingLink>
   </div>
-		  
-		  {/* Link Geral Financeiro */} 
-		  <div className="bg-white border-2 border-orange-300 rounded-lg p-4"> 
-			  <h3 className="font-semibold text-orange-900 mb-3 text-center">
-				  📊 Material Geral Financeiro
-			  </h3> 
-			  <div className="flex justify-center"> 
-				  <TrainingLink href="https://docs.google.com/spreadsheets/d/1sMv4iIdCgKdP-dLo_3Figf-lNXcYkvxNmv1Ic3gx8fE/edit?usp=sharing">
-					  🔗 Planilha Financeiro Completa
-				  </TrainingLink> 
-			  </div>
-		  </div>
-	
+</div>
   const getRetencaoContent = () => (
     <div className="space-y-6">
       <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
