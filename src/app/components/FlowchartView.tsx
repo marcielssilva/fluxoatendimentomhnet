@@ -558,8 +558,72 @@ export function FlowchartView() {
     </div>
   );
 
-  const getFinanceiroContent = () => ( <div className="space-y-6"> <div className="bg-orange-50 border-l-4 border-orange-500 p-4 rounded"> <h3 className="font-semibold text-orange-900 mb-2">🟠 Fluxo Financeiro</h3> <p className="text-sm text-orange-800"> Bloqueios, Faturamento, Pagamentos e Crédito </p> </div> {/* Link Geral Financeiro */} <div className="bg-white border-2 border-orange-300 rounded-lg p-4"> <h3 className="font-semibold text-orange-900 mb-3 text-center">📊 Material Geral Financeiro</h3> <div className="flex justify-center"> <TrainingLink href="https://docs.google.com/spreadsheets/d/1sMv4iIdCgKdP-dLo_3Figf-lNXcYkvxNmv1Ic3gx8fE/edit?usp=sharing"> 🔗 Planilha Financeiro Completa </TrainingLink> </div> </div> {/* 4.1 BLOQUEIOS */} <div className="bg-red-50 border-2 border-red-300 rounded-lg p-4"> <h3 className="font-semibold text-red-900 mb-3 flex items-center gap-2"> <Lock className="size-5" /> 💰 4.1 Bloqueios </h3> <div className="space-y-3"> <div className="bg-white border-l-4 border-red-500 p-3 rounded"> <div className="space-y-1 text-sm text-red-800"> <p>• Financeiro</p> <p>• Administrativo</p> </div> </div> <div className="bg-blue-50 border-l-4 border-blue-500 p-3 rounded"> <h4 className="font-semibold text-blue-900 mb-2 text-sm">➡️ Ação</h4> <p className="text-sm text-blue-800">• Validar comprovante</p> <p className="text-sm text-blue-800">• Liberar acesso</p> </div> <div className="flex justify-center"> <TrainingLink href="https://drive.google.com/file/d/1mdC-y7EHmI8XI6R2sdu6MB4RMfuINsb-/view?usp=share_link"> 🔗 Treinamento - Bloqueios </TrainingLink> </div> </div> </div> {/* 4.2 FATURAMENTO */} <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-4"> <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2"> <FileText className="size-5" /> 🧾 4.2 Faturamento </h3> <div className="bg-white border-l-4 border-blue-500 p-3 rounded mb-4"> <div className="space-y-1 text-sm text-blue-800"> <p>• Correção de cobranças</p> <p>• Ajustes</p> </div> </div> <div className="flex justify-center"> <TrainingLink href="https://drive.google.com/file/d/1t105iGODbYLFxng0QxQV4E8t64MLA_g0/view?usp=sharing"> 🔗 Treinamento - Faturamento </TrainingLink> </div> </div> {/* 4.3 PAGAMENTOS */} <div className="bg-green-50 border-2 border-green-300 rounded-lg p-4"> <h3 className="font-semibold text-green-900 mb-3 flex items-center gap-2"> <CreditCard className="size-5" /> 🏦 4.3 Pagamentos </h3> <div className="bg-white border-l-4 border-green-500 p-3 rounded mb-4"> <div className="space-y-1 text-sm text-green-800"> <p>• Débito em conta</p> <p>• Baixas</p> </div> </div> <div className="flex justify-center"> <TrainingLink href="https://drive.google.com/file/d/1Jvyctn-6C9drl0anvmn21QyV-g1Uyj9d/view?usp=sharing"> 🔗 Treinamento - Pagamentos </TrainingLink> </div> </div> {/* 4.4 CRÉDITO */} <div className="bg-yellow-50 border-2 border-yellow-300 rounded-lg p-4"> <h3 className="font-semibold text-yellow-900 mb-3 flex items-center gap-2"> <AlertTriangle className="size-5" /> 🚫 4.4 Crédito </h3> <div className="bg-white border-l-4 border-yellow-500 p-3 rounded mb-4"> <div className="space-y-1 text-sm text-yellow-800"> <p>• Códigos de erro</p> <p>• Tratativas</p> </div> </div> <div className="flex justify-center"> <TrainingLink href="https://drive.google.com/file/d/1bvGCZZ3NZMX8wyInONa92FQ5-III__2g/view?usp=share_link"> 🔗 Treinamento - Crédito </TrainingLink> </div> </div> </div> );
+  const getFinanceiroContent = () => ( 
+	  <div className="space-y-6"> 
+		  <div className="bg-orange-50 border-l-4 border-orange-500 p-4 rounded"> 
+			  <h3 className="font-semibold text-orange-900 mb-2">🟠 Fluxo Financeiro</h3>
+			  <p className="text-sm text-orange-800"> 
+				  Bloqueios, Faturamento, Pagamentos e Crédito 
+			  </p> 
+		  </div> 
 
+		  <div className="mt-4">
+    <ProcessCard
+      title="Atendimentos financeiros"
+      icon={<DollarSign className="w-4 h-4" />}
+      color="emerald"
+      steps={[
+        'Identificar a solicitação do cliente: boleto, pagamento, bloqueio, negociação ou dúvidas de faturamento',
+        'Validar situação financeira do cliente no sistema (faturas em aberto, vencimentos, histórico)',
+        'Confirmar com o cliente qual é a dúvida ou solicitação específica',
+        'Orientar o cliente conforme a situação identificada',
+        'Quando necessário, encaminhar para o setor responsável com as informações completas',
+      ]}
+    />
+  </div>
+
+		  <div className="mt-4">
+    <ProcessCard
+      title="Bloqueios"
+      icon={<Lock className="w-4 h-4" />}
+      color="red"
+      steps={[
+        'Bloqueio Administrativo: Quando uma fatura renegociada vence, é realizado o bloqueio do sinal, sendo liberado apenas mediante pagamento do débito',
+        'Bloqueio Financeiro: A partir do 5º dia após o vencimento da fatura, pode ocorrer bloqueio do serviço',
+        'O cliente possui direito a até 2 desbloqueios de confiança, com duração de 24 horas cada',
+        'Orientar o cliente sobre a regularização do débito para evitar novos bloqueios',
+        'Sempre registrar todo o atendimento via protocolo no ERP',
+      ]}
+    />
+  </div>
+
+		  div className="mt-4">
+    <ProcessCard
+      title="Orientações importantes"
+      icon={<AlertCircle className="w-4 h-4" />}
+      color="purple"
+      steps={[
+        'Sempre confirmar os dados do cliente antes de informar valores ou situação financeira',
+        'Validar se há faturas vencidas antes de qualquer orientação',
+        'Registrar no atendimento todas as informações repassadas ao cliente',
+        'Evitar prometer prazos ou condições que não estejam confirmadas no sistema',
+        'Em caso de negociação ou exceção, seguir o procedimento interno ou escalar corretamente',
+      ]}
+    />
+  </div>
+		  
+		  {/* Link Geral Financeiro */} 
+		  <div className="bg-white border-2 border-orange-300 rounded-lg p-4"> 
+			  <h3 className="font-semibold text-orange-900 mb-3 text-center">
+				  📊 Material Geral Financeiro
+			  </h3> 
+			  <div className="flex justify-center"> 
+				  <TrainingLink href="https://docs.google.com/spreadsheets/d/1sMv4iIdCgKdP-dLo_3Figf-lNXcYkvxNmv1Ic3gx8fE/edit?usp=sharing">
+					  🔗 Planilha Financeiro Completa
+				  </TrainingLink> 
+			  </div>
+		  </div>
+	
   const getRetencaoContent = () => (
     <div className="space-y-6">
       <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
