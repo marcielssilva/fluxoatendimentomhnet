@@ -275,13 +275,58 @@ export function FlowchartView() {
           ☎️ 3.5 Telefonia
         </h3>
         
-        <div className="bg-white border-l-4 border-green-500 p-3 rounded mb-4">
-          <h4 className="font-semibold text-green-900 mb-2 text-sm">VOIP / FIXO</h4>
-          <div className="space-y-1 text-sm text-green-800">
-            <p>• Configuração</p>
-            <p>• Falhas</p>
-          </div>
-        </div>
+        <ProcessCard
+      title="Validação e tratativa inicial"
+      icon={<Phone className="w-4 h-4" />}
+      color="green"
+      steps={[
+        'Confirmar com o cliente qual é a falha apresentada: sem linha, sem receber chamadas, sem realizar chamadas, chiado, falha parcial ou instabilidade',
+        'Validar se o aparelho telefônico está corretamente conectado e energizado, quando aplicável',
+        'Testar cabo, porta TEL e conexão física do equipamento',
+        'Verificar no Tip Zeus o registro da linha e o status atual do serviço',
+        'Confirmar se a linha está registrada corretamente e sem bloqueios aparentes',
+        'Realizar testes básicos de chamadas, quando possível',
+        'Orientar o cliente a testar chamadas de entrada e saída',
+        'Se houver normalização, confirmar funcionamento completo antes de encerrar o atendimento',
+        '➡️ Persistindo a falha → Encaminhar para o setor de telefonia',
+      ]}
+    />
+
+		  <div className="mt-4">
+    <ProcessCard
+      title="Testes que podem ser realizados"
+      icon={<PhoneCall className="w-4 h-4" />}
+      color="blue"
+      steps={[
+        'Teste de chamada de saída para número fixo',
+        'Teste de chamada de saída para número móvel',
+        'Teste de recebimento de chamada',
+        'Validação de ausência de tom de linha',
+        'Teste com outro aparelho telefônico, quando possível',
+        'Validação da porta TEL e reinicialização do equipamento',
+        'Confirmação de registro da linha no Tip Zeus após reinício',
+      ]}
+    />
+  </div>
+
+		  <div className="mt-4">
+    <ProcessCard
+      title="Orientações importantes"
+      icon={<AlertCircle className="w-4 h-4" />}
+      color="purple"
+      steps={[
+        'Registrar no atendimento exatamente qual sintoma o cliente relatou',
+        'Sempre validar no Tip Zeus antes de concluir falha física ou encaminhamento',
+        'Confirmar se o problema ocorre em todas as chamadas ou apenas em números específicos',
+        'Quando possível, solicitar teste com outro aparelho para descartar defeito no telefone',
+        'Se houver chiado, falha intermitente ou ausência de áudio, registrar com detalhes',
+        'Informar no encaminhamento todos os testes realizados para evitar retrabalho',
+        'Antes de encerrar, confirmar com o cliente se as chamadas de entrada e saída estão funcionando normalmente',
+      ]}
+    />
+  </div>
+
+		  
 
         <div className="flex justify-center">
           <TrainingLink href="https://drive.google.com/file/d/14_pc4AHfo43gxYEAFGWlndrFuYkMFg1V/view?usp=sharing">
