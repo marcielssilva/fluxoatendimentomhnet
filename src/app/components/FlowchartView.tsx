@@ -69,6 +69,12 @@ export function FlowchartView() {
             ]}
           />
         </div>
+
+        <div className="mt-4 flex justify-center">
+          <TrainingLink href="https://drive.google.com/file/d/18Otbn-FaeE-ZHeOHOk46ghMA_jlYL1My/view?usp=sharing">
+            🔗 Treinamento - LED's da ONU
+          </TrainingLink>
+        </div>
       </div>
 
       {/* 3.2 LENTIDÃO */}
@@ -94,6 +100,12 @@ export function FlowchartView() {
         <div className="mt-4 flex flex-col gap-2">
           <TrainingLink href="https://drive.google.com/file/d/1CK1rd6kSxggA6szUAjz2PzqcS14evP_9/view?usp=sharing">
             🔗 Acesso Remoto
+          </TrainingLink>
+          <TrainingLink href="https://drive.google.com/file/d/1ikQ2KlVaJI2UQtWBPzklPo6MU8CrkP-C/view?usp=sharing">
+            🔗 Configuração Huawei
+          </TrainingLink>
+          <TrainingLink href="https://drive.google.com/file/d/1Dofnz7px2acaLF8C4qbyfkN7OdktFsFa/view?usp=sharing">
+            🔗 Flashman
           </TrainingLink>
         </div>
       </div>
@@ -139,6 +151,12 @@ export function FlowchartView() {
             'Ajustes de rede',
           ]}
         />
+
+        <div className="mt-4 flex justify-center">
+          <TrainingLink href="https://drive.google.com/file/d/1Sffq4yxYJ5fyMjRPT5o-eENnRedOVKsN/view?usp=sharing">
+            🔗 Liberação de Portas
+          </TrainingLink>
+        </div>
 
         {/* MVNO / MHTV / DEOLHO */}
         <div className="mt-4 bg-white border-2 border-indigo-200 rounded-lg p-4">
@@ -381,6 +399,16 @@ export function FlowchartView() {
         <p className="text-sm text-orange-800">
           Bloqueios, Faturamento, Pagamentos e Crédito
         </p>
+      </div>
+
+      {/* Link Geral Financeiro */}
+      <div className="bg-white border-2 border-orange-300 rounded-lg p-4">
+        <h3 className="font-semibold text-orange-900 mb-3 text-center">📊 Material Geral Financeiro</h3>
+        <div className="flex justify-center">
+          <TrainingLink href="https://docs.google.com/spreadsheets/d/1sMv4iIdCgKdP-dLo_3Figf-lNXcYkvxNmv1Ic3gx8fE/edit?usp=sharing">
+            🔗 Planilha Financeiro Completa
+          </TrainingLink>
+        </div>
       </div>
 
       {/* 4.1 BLOQUEIOS */}
