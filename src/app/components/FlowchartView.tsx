@@ -101,25 +101,47 @@ export function FlowchartView() {
           🐢 3.2 Lentidão
         </h3>
         
-        <ProcessCard
-          title="Ações"
-          icon={<Settings className="size-5" />}
-          color="yellow"
-          steps={[
-            'Verificar cabos',
-            'Teste cabo/Wi-Fi',
-            'Acesso remoto',
-            'Ajustes (Huawei / Flashman)',
-            '➡️ Persistindo → Visita técnica',
-          ]}
-        />
+        <div className="mt-4">
+  <ProcessCard
+    title="Validação e tratativa inicial"
+    icon={<Wifi className="w-4 h-4" />}
+    color="yellow"
+    steps={[
+      'Confirmar com o cliente se a lentidão ocorre em todos os dispositivos ou apenas em um equipamento',
+      'Validar se o teste foi realizado via cabo e via Wi-Fi',
+      'Orientar teste de velocidade próximo ao roteador/ONU, sem uso simultâneo intenso',
+      'Verificar cabos, conectores e reinicialização do equipamento',
+      'Realizar acesso remoto e validar consumo, sinal e estabilidade da conexão',
+      'Aplicar ajustes básicos no equipamento/roteador quando disponível (Huawei / Flashman)',
+      'Se houver normalização, confirmar navegação e teste final com o cliente',
+      '➡️ Persistindo a falha → Encaminhar para visita técnica',
+    ]}
+  />
+</div>
+
+<div className="mt-4">
+  <ProcessCard
+    title="Orientações importantes"
+    icon={<Info className="w-4 h-4" />}
+    color="purple"
+    steps={[
+      'Priorizar teste cabeado para diferenciar problema de Wi-Fi e problema de link',
+      'Confirmar se a reclamação é sobre lentidão constante ou em horários específicos',
+      'Verificar quantidade de dispositivos conectados e uso simultâneo de streaming, downloads ou jogos',
+      'Verificar cabos, conectores e reinicialização do equipamento',
+      'Realizar acesso remoto e validar consumo, sinal e estabilidade da conexão',
+      'Aplicar ajustes básicos no equipamento/roteador quando disponível (Huawei / Flashman)',
+      'Sempre registrar no atendimento como o teste foi realizado e qual foi o resultado informado pelo cliente',
+    ]}
+  />
+</div>
 
         <div className="mt-4 flex flex-col gap-2">
           <TrainingLink href="https://drive.google.com/file/d/1CK1rd6kSxggA6szUAjz2PzqcS14evP_9/view?usp=sharing">
             🔗 Acesso Remoto
           </TrainingLink>
           <TrainingLink href="https://drive.google.com/file/d/1ikQ2KlVaJI2UQtWBPzklPo6MU8CrkP-C/view?usp=sharing">
-            🔗 Configuração Huawei
+            🔗 Configuração Huawei / TP - LINK
           </TrainingLink>
           <TrainingLink href="https://drive.google.com/file/d/1Dofnz7px2acaLF8C4qbyfkN7OdktFsFa/view?usp=sharing">
             🔗 Flashman
