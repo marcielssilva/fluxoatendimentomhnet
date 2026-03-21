@@ -58,7 +58,7 @@ export function FlowchartView() {
     <div className="space-y-6">
       <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
         <h3 className="font-semibold text-blue-900 mb-2">
-          🤝 Fluxo de Atendimento Técnico Completo</h3>
+          📡  Fluxo Técnico </h3>
         <p className="text-sm text-blue-800">
           Suporte, Configuração, Telefonia e Mudanças Estruturais
         </p>
