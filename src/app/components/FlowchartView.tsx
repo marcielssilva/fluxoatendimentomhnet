@@ -51,6 +51,7 @@ export function FlowchartView() {
           icon={<AlertCircle className="size-5" />}
           color="red"
           steps={[
+            'Verificar cabos',
             'LEDs da ONU',
             'Queda total',
           ]}
@@ -68,12 +69,6 @@ export function FlowchartView() {
             ]}
           />
         </div>
-
-        <div className="mt-4 flex justify-center">
-          <TrainingLink href="https://drive.google.com/file/d/18Otbn-FaeE-ZHeOHOk46ghMA_jlYL1My/view?usp=sharing">
-            🔗 Treinamento - Sem Conexão
-          </TrainingLink>
-        </div>
       </div>
 
       {/* 3.2 LENTIDÃO */}
@@ -88,6 +83,7 @@ export function FlowchartView() {
           icon={<Settings className="size-5" />}
           color="yellow"
           steps={[
+            'Verificar cabos',
             'Teste cabo/Wi-Fi',
             'Acesso remoto',
             'Ajustes (Huawei / Flashman)',
@@ -98,9 +94,6 @@ export function FlowchartView() {
         <div className="mt-4 flex flex-col gap-2">
           <TrainingLink href="https://drive.google.com/file/d/1CK1rd6kSxggA6szUAjz2PzqcS14evP_9/view?usp=sharing">
             🔗 Acesso Remoto
-          </TrainingLink>
-          <TrainingLink href="https://drive.google.com/file/d/1ikQ2KlVaJI2UQtWBPzklPo6MU8CrkP-C/view?usp=sharing">
-            🔗 Configuração Huawei
           </TrainingLink>
         </div>
       </div>
@@ -637,7 +630,7 @@ export function FlowchartView() {
             {/* Técnico */}
             <div className="flex flex-col items-center space-y-4">
               <FlowchartNode
-                title="🔧 Técnico"
+                title="🔧 Suporte Técnico"
                 type="process"
                 onClick={() => setActiveDetail('tecnico')}
                 icon={<Wrench className="size-5" />}
@@ -709,7 +702,7 @@ export function FlowchartView() {
               <div>Triagem</div>
               <div>↓</div>
               <div className="grid grid-cols-3 gap-2">
-                <span className="text-blue-600">Técnico</span>
+                <span className="text-blue-600">Suporte Técnico</span>
                 <span className="text-green-600">Financeiro</span>
                 <span className="text-red-600">Retenção</span>
               </div>
