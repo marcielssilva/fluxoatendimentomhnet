@@ -11,7 +11,7 @@ A aplicação foi desenvolvida com foco em usabilidade, organização e agilidad
 - ⚛️ **React** + **Vite**
 - 🎨 **Figma** (design e prototipação)
 - ☁️ **Vercel** (deploy e hospedagem)
-- 🤖 **Inteligência Artificial** (apoio no desenvolvimento, estruturação e otimização do código)
+- 🤖 **Inteligência Artificial** (apoio no desenvolvimento, estruturação e otimização do código `GEMINI / GPT PLUS)
 
 ---
 
