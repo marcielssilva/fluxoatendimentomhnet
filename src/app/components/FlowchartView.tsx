@@ -154,16 +154,38 @@ export function FlowchartView() {
         </h3>
         
         <ProcessCard
-          title="Procedimentos"
-          icon={<Radio className="size-5" />}
-          color="purple"
-          steps={[
-            'Validação de sinal',
-            'Interferência',
-            '➡️ Ajuste ou visita',
-            'Treinamento - Via Rádio - Em breve'
-          ]}
-        />
+      title="Orientações importantes"
+      icon={<AlertCircle className="w-4 h-4" />}
+      color="purple"
+      steps={[
+        'Priorizar sempre a validação via Zabbix antes de seguir com outras tratativas',
+        'Confirmar se o problema afeta apenas um cliente ou pode estar relacionado à torre/região',
+        'Registrar no atendimento o nome da torre, status visualizado e comportamento da conexão',
+        'Quando houver oscilação, verificar se existem chamados anteriores ou recorrência no mesmo ponto',
+        'Se o cliente relatar falha após chuva, vento forte ou queda de energia, registrar essa informação',
+        'Evitar concluir como problema interno sem antes validar completamente o cenário da conexão rádio',
+        'Sempre confirmar com o cliente se o serviço voltou a funcionar antes de encerrar o atendimento',
+      ]}
+    />
+
+		  <div className="mt-4">
+    <ProcessCard
+      title="Orientações importantes"
+      icon={<AlertCircle className="w-4 h-4" />}
+      color="purple"
+      steps={[
+        'Priorizar sempre a validação via Zabbix antes de seguir com outras tratativas',
+        'Confirmar se o problema afeta apenas um cliente ou pode estar relacionado à torre/região',
+        'Registrar no atendimento o nome da torre, status visualizado e comportamento da conexão',
+        'Quando houver oscilação, verificar se existem chamados anteriores ou recorrência no mesmo ponto',
+        'Se o cliente relatar falha após chuva, vento forte ou queda de energia, registrar essa informação',
+        'Evitar concluir como problema interno sem antes validar completamente o cenário da conexão rádio',
+        'Sempre confirmar com o cliente se o serviço voltou a funcionar antes de encerrar o atendimento',
+      ]}
+    />
+  </div>
+
+		  
 
         <div className="mt-4 flex justify-center">
           <div className="bg-white p-3 rounded border border-purple-200">
