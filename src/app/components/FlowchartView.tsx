@@ -154,17 +154,18 @@ export function FlowchartView() {
         </h3>
         
         <ProcessCard
-      title="Orientações importantes"
-      icon={<AlertCircle className="w-4 h-4" />}
-      color="purple"
+      title="Validação e tratativa inicial"
+      icon={<Radio className="w-4 h-4" />}
+      color="orange"
       steps={[
-        'Priorizar sempre a validação via Zabbix antes de seguir com outras tratativas',
-        'Confirmar se o problema afeta apenas um cliente ou pode estar relacionado à torre/região',
-        'Registrar no atendimento o nome da torre, status visualizado e comportamento da conexão',
-        'Quando houver oscilação, verificar se existem chamados anteriores ou recorrência no mesmo ponto',
-        'Se o cliente relatar falha após chuva, vento forte ou queda de energia, registrar essa informação',
-        'Evitar concluir como problema interno sem antes validar completamente o cenário da conexão rádio',
-        'Sempre confirmar com o cliente se o serviço voltou a funcionar antes de encerrar o atendimento',
+        'Confirmar com o cliente se a falha é sem conexão total, lentidão ou instabilidade',
+        'Validar se os equipamentos estão ligados corretamente e se houve reinicialização',
+        'Verificar no Zabbix o status da conexão e da torre responsável pelo atendimento',
+        'Confirmar se há indisponibilidade, alerta ou oscilação no ponto de atendimento',
+        'Validar nível de sinal, estabilidade do enlace e comportamento do equipamento, quando disponível',
+        'Se houver falha relacionada à torre ou rompimento de comunicação, orientar o cliente e registrar corretamente',
+        'Se normalizar durante o atendimento, confirmar teste final com o cliente',
+        '➡️ Persistindo a falha → Encaminhar para visita técnica ou setor responsável',
       ]}
     />
 
