@@ -368,10 +368,7 @@ export function FlowchartView() {
         
         <div className="space-y-3">
           <div className="bg-white p-3 rounded border border-purple-200">
-            <h4 className="font-semibold text-purple-900 mb-2 text-sm">⚙️ UNM2000</h4>
-            <TrainingLink href="https://drive.google.com/file/d/1dTHzgH779gG09XXw18UxCROnfF0coN4S/view?usp=sharing">
-              Acessar Material
-            </TrainingLink>
+            <h4 className="font-semibold text-purple-900 mb-2 text-sm">⚙️ UNM2000 - Em Breve Material</h4>
           </div>
 
           <div className="bg-white p-3 rounded border border-purple-200">
