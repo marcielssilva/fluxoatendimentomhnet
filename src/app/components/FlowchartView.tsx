@@ -328,7 +328,7 @@ export function FlowchartView() {
 
 		  
 
-        <div className="flex justify-center">
+        <div className="mt-4 flex flex-col gap-2">
           <TrainingLink href="https://drive.google.com/file/d/14_pc4AHfo43gxYEAFGWlndrFuYkMFg1V/view?usp=sharing">
             🔗 Treinamento - Telefonia VOIP
           </TrainingLink>
