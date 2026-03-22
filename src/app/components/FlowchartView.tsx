@@ -797,7 +797,7 @@ export function FlowchartView() {
             steps={[
               'Encaminhar o caso para N2 com descrição objetiva do problema',
               'Anexar prints, erros apresentados e testes realizados',
-              'Quando necessário, acionar o responsável via Alfredo no número +55 49 3199-2168 em horário comercial',
+              'Quando necessário, acionar o responsável via Alfredo no número 49 3199-2168 em horário comercial',
               'Registrar corretamente no atendimento tudo o que foi validado antes do escalonamento',
             ]}
           />
@@ -846,7 +846,7 @@ export function FlowchartView() {
             steps={[
               'Encaminhar o caso para N2 com os dados do cliente e descrição da falha',
               'Informar que o benefício não foi recebido após validação de caixa de entrada, spam e lixo eletrônico',
-              'Quando necessário, acionar o responsável via Alfredo no número ( 49 3199-2168 ) em horário comercial',
+              'Quando necessário, acionar o responsável via Alfredo no número 49 3199-2168 em horário comercial',
               'Registrar no atendimento todas as validações feitas antes do acionamento',
             ]}
           />
