@@ -29,7 +29,7 @@ import {
   BookOpen,
 } from 'lucide-react';
 
-type DetailView = 'tecnico' | 'financeiro' | 'retencao' | null;
+type DetailView = 'tecnico' | 'financeiro' | 'retencao' | 'n2' | null;
 
 function TrainingLink({
   href,
@@ -57,8 +57,7 @@ export function FlowchartView() {
   const getTecnicoContent = () => (
     <div className="space-y-6">
       <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
-        <h3 className="font-semibold text-blue-900 mb-2">
-          📡  Fluxo Técnico </h3>
+        <h3 className="font-semibold text-blue-900 mb-2">📡 Fluxo Técnico</h3>
         <p className="text-sm text-blue-800">
           Suporte, Configuração, Telefonia e Mudanças Estruturais
         </p>
@@ -69,7 +68,6 @@ export function FlowchartView() {
         </p>
       </div>
 
-      {/* 3.1 SEM CONEXÃO */}
       <div className="bg-red-50 border-2 border-red-300 rounded-lg p-4">
         <h3 className="font-semibold text-red-900 mb-3 flex items-center gap-2">
           <WifiOff className="size-5" />
@@ -124,7 +122,6 @@ export function FlowchartView() {
         </div>
       </div>
 
-      {/* 3.2 LENTIDÃO */}
       <div className="bg-yellow-50 border-2 border-yellow-300 rounded-lg p-4">
         <h3 className="font-semibold text-yellow-900 mb-3 flex items-center gap-2">
           <TrendingDown className="size-5" />
@@ -174,7 +171,6 @@ export function FlowchartView() {
         </div>
       </div>
 
-      {/* 3.3 VIA RÁDIO */}
       <div className="bg-purple-50 border-2 border-purple-300 rounded-lg p-4">
         <h3 className="font-semibold text-purple-900 mb-3 flex items-center gap-2">
           <Radio className="size-5" />
@@ -223,7 +219,6 @@ export function FlowchartView() {
         </div>
       </div>
 
-      {/* 3.4 CONFIGURAÇÃO */}
       <div className="bg-indigo-50 border-2 border-indigo-300 rounded-lg p-4">
         <h3 className="font-semibold text-indigo-900 mb-3 flex items-center gap-2">
           <Settings className="size-5" />
@@ -296,7 +291,6 @@ export function FlowchartView() {
         </div>
       </div>
 
-      {/* 3.5 TELEFONIA */}
       <div className="bg-green-50 border-2 border-green-300 rounded-lg p-4">
         <h3 className="font-semibold text-green-900 mb-3 flex items-center gap-2">
           <Phone className="size-5" />
@@ -361,7 +355,6 @@ export function FlowchartView() {
         </div>
       </div>
 
-      {/* 3.6 MUDANÇA DE ENDEREÇO */}
       <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-4">
         <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
           <Home className="size-5" />
@@ -475,7 +468,6 @@ export function FlowchartView() {
         </div>
       </div>
 
-      {/* 3.7 MUDANÇA DE PONTO INTERNO / PONTO CABEADO */}
       <div className="bg-orange-50 border-2 border-orange-300 rounded-lg p-4">
         <h3 className="font-semibold text-orange-900 mb-3 flex items-center gap-2">
           <MapPin className="size-5" />
@@ -523,7 +515,6 @@ export function FlowchartView() {
         </div>
       </div>
 
-      {/* 3.8 VISITA TÉCNICA */}
       <div className="bg-gray-50 border-2 border-gray-300 rounded-lg p-4">
         <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
           <Wrench className="size-5" />
@@ -548,7 +539,6 @@ export function FlowchartView() {
         </div>
       </div>
 
-      {/* CONTEÚDOS ADICIONAIS */}
       <div className="bg-purple-50 border-2 border-purple-300 rounded-lg p-4">
         <h3 className="font-semibold text-purple-900 mb-4 flex items-center gap-2">
           <BookOpen className="size-5" />
@@ -648,132 +638,295 @@ export function FlowchartView() {
       </div>
     </div>
   );
-const getRetencaoContent = () => (
-  <div className="space-y-6">
-    {/* RETENÇÃO */}
-  <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
-    <h3 className="font-semibold text-red-900 mb-2">🔴 Fluxo de Retenção</h3>
-    <p className="text-sm text-red-800">
-      Estratégias para retenção, redução de atrito e continuidade do atendimento
-    </p>
-  </div>
 
-  <div className="bg-orange-50 border-2 border-orange-300 rounded-lg p-4">
-    <h3 className="font-semibold text-orange-900 mb-3 flex items-center gap-2">
-      <Target className="size-5" />
-      🎯 Quando Acionar
-    </h3>
+  const getRetencaoContent = () => (
+    <div className="space-y-6">
+      <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
+        <h3 className="font-semibold text-red-900 mb-2">🔴 Fluxo de Retenção</h3>
+        <p className="text-sm text-red-800">
+          Estratégias para retenção, redução de atrito e continuidade do atendimento
+        </p>
+      </div>
 
-    <div className="mt-4">
-      <ProcessCard
-        title="Situações de acionamento"
-        icon={<Target className="w-4 h-4" />}
-        color="orange"
-        steps={[
-          'Cliente manifesta intenção de cancelamento',
-          'Cliente demonstra insatisfação recorrente com o serviço',
-          'Cliente reclama de valores, reajustes ou cobranças',
-          'Cliente recusa taxas ou custos necessários para continuidade do atendimento',
-          'Cliente solicita downgrade, revisão de plano ou alternativa para permanência',
-          'Casos em que existe risco real de cancelamento por desgaste no atendimento',
-        ]}
-      />
+      <div className="bg-orange-50 border-2 border-orange-300 rounded-lg p-4">
+        <h3 className="font-semibold text-orange-900 mb-3 flex items-center gap-2">
+          <Target className="size-5" />
+          🎯 Quando Acionar
+        </h3>
+
+        <div className="mt-4">
+          <ProcessCard
+            title="Situações de acionamento"
+            icon={<Target className="w-4 h-4" />}
+            color="orange"
+            steps={[
+              'Cliente manifesta intenção de cancelamento',
+              'Cliente demonstra insatisfação recorrente com o serviço',
+              'Cliente reclama de valores, reajustes ou cobranças',
+              'Cliente recusa taxas ou custos necessários para continuidade do atendimento',
+              'Cliente solicita downgrade, revisão de plano ou alternativa para permanência',
+              'Casos em que existe risco real de cancelamento por desgaste no atendimento',
+            ]}
+          />
+        </div>
+      </div>
+
+      <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-4">
+        <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
+          <Wrench className="size-5" />
+          🧩 Ações Iniciais
+        </h3>
+
+        <div className="mt-4">
+          <ProcessCard
+            title="Ações antes de escalar"
+            icon={<Wrench className="w-4 h-4" />}
+            color="blue"
+            steps={[
+              'Ouvir o motivo principal da insatisfação do cliente com atenção',
+              'Identificar se a causa é técnica, financeira, comercial ou relacionada ao atendimento',
+              'Tentar resolver o problema na origem antes de encaminhar',
+              'Se for técnico, validar possibilidade de ajuste, suporte ou visita',
+              'Se for financeiro, validar alternativas permitidas conforme procedimento interno',
+              'Se for comercial, verificar possibilidade de adequação de plano ou permanência',
+              'Explicar com clareza os próximos passos para reduzir atrito e insegurança do cliente',
+            ]}
+          />
+        </div>
+
+        <div className="mt-4">
+          <ProcessCard
+            title="Possíveis alternativas"
+            icon={<Package className="w-4 h-4" />}
+            color="purple"
+            steps={[
+              'Oferecer ajuste técnico quando o motivo da insatisfação for falha no serviço',
+              'Oferecer upgrade ou downgrade de plano, quando aplicável',
+              'Reforçar benefícios do serviço contratado, quando fizer sentido no contexto',
+              'Encaminhar para retenção quando o cliente insistir no cancelamento ou o caso exigir negociação específica',
+            ]}
+          />
+        </div>
+      </div>
+
+      <div className="bg-purple-50 border-2 border-purple-300 rounded-lg p-4">
+        <h3 className="font-semibold text-purple-900 mb-3 flex items-center gap-2">
+          <AlertCircle className="size-5" />
+          📌 Orientações Importantes
+        </h3>
+
+        <div className="mt-4">
+          <ProcessCard
+            title="Boas práticas no atendimento"
+            icon={<AlertCircle className="w-4 h-4" />}
+            color="purple"
+            steps={[
+              'Registrar no protocolo o motivo exato da insatisfação do cliente',
+              'Evitar respostas secas ou encaminhamentos sem tentativa real de tratativa',
+              'Demonstrar empatia e segurança durante a condução do atendimento',
+              'Não prometer condições, descontos ou exceções fora do procedimento',
+              'Informar de forma clara tudo o que foi ofertado, validado ou recusado pelo cliente',
+              'Quando houver encaminhamento, registrar o máximo de detalhes para evitar retrabalho',
+            ]}
+          />
+        </div>
+      </div>
+
+      <div className="bg-yellow-50 border-2 border-yellow-300 rounded-lg p-4">
+        <h3 className="font-semibold text-yellow-900 mb-3 flex items-center gap-2">
+          <HandshakeIcon className="size-5" />
+          ⚠️ Regra de Ouro
+        </h3>
+
+        <div className="mt-4">
+          <ProcessCard
+            title="Antes de escalar para retenção"
+            icon={<HandshakeIcon className="w-4 h-4" />}
+            color="yellow"
+            steps={[
+              'Tentar resolver o problema principal do cliente',
+              'Reduzir o atrito durante a conversa',
+              'Validar possibilidade de ajuste de plano ou continuidade',
+              'Confirmar se ainda existe intenção de cancelamento após a tratativa',
+              'Persistindo o desejo de cancelamento ou impasse → Encaminhar para retenção',
+            ]}
+          />
+        </div>
+      </div>
     </div>
-  </div>
+  );
 
-  <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-4">
-    <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
-      <Wrench className="size-5" />
-      🧩 Ações Iniciais
-    </h3>
+  const getN2Content = () => (
+    <div className="space-y-6">
+      <div className="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded">
+        <h3 className="font-semibold text-indigo-900 mb-2">🧩 Conteúdos N2</h3>
+        <p className="text-sm text-indigo-800">
+          Escalonamentos avançados, benefícios e acionamentos internos
+        </p>
+        <p className="text-sm text-indigo-800 mt-2">
+          ⚠️ <strong>SEMPRE</strong> encaminhar com testes, evidências e descrição clara da falha
+        </p>
+      </div>
 
-    <div className="mt-4">
-      <ProcessCard
-        title="Ações antes de escalar"
-        icon={<Wrench className="w-4 h-4" />}
-        color="blue"
-        steps={[
-          'Ouvir o motivo principal da insatisfação do cliente com atenção',
-          'Identificar se a causa é técnica, financeira, comercial ou relacionada ao atendimento',
-          'Tentar resolver o problema na origem antes de encaminhar',
-          'Se for técnico, validar possibilidade de ajuste, suporte ou visita',
-          'Se for financeiro, validar alternativas permitidas conforme procedimento interno',
-          'Se for comercial, verificar possibilidade de adequação de plano ou permanência',
-          'Explicar com clareza os próximos passos para reduzir atrito e insegurança do cliente',
-        ]}
-      />
+      <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-4">
+        <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
+          <Monitor className="size-5" />
+          🌐 Domínio / E-mail / Site
+        </h3>
+
+        <ProcessCard
+          title="Validação e tratativa inicial"
+          icon={<Monitor className="w-4 h-4" />}
+          color="blue"
+          steps={[
+            'Verificar qual é a demanda do cliente: domínio, e-mail ou site',
+            'Identificar qual erro está ocorrendo, como falha ao acessar, indisponibilidade ou erro ao enviar e-mails',
+            'Validar com o cliente quando o problema começou e se ocorre de forma contínua ou intermitente',
+            'Em casos de domínio ou site, realizar testes de ping e traceroute quando aplicável',
+            'Em casos de e-mail, validar e reconfigurar SMTP quando necessário',
+            'Coletar informações, testes e evidências para escalonamento',
+            '➡️ Persistindo a falha → Acionar N2 para direcionamento ao responsável',
+          ]}
+        />
+
+        <div className="mt-4">
+          <ProcessCard
+            title="Escalonamento e acionamento"
+            icon={<AlertCircle className="w-4 h-4" />}
+            color="purple"
+            steps={[
+              'Encaminhar o caso para N2 com descrição objetiva do problema',
+              'Anexar prints, erros apresentados e testes realizados',
+              'Quando necessário, acionar o responsável via Alfredo no número +55 49 3199-2168 em horário comercial',
+              'Registrar corretamente no atendimento tudo o que foi validado antes do escalonamento',
+            ]}
+          />
+        </div>
+
+        <div className="mt-4">
+          <ProcessCard
+            title="Orientações importantes"
+            icon={<CheckCircle2 className="w-4 h-4" />}
+            color="yellow"
+            steps={[
+              'Sempre identificar exatamente se a falha está relacionada a domínio, e-mail ou site',
+              'Evitar escalonamento sem testes mínimos realizados',
+              'Encaminhar sempre com anexos e evidências para evitar retrabalho',
+              'Registrar claramente o impacto relatado pelo cliente',
+            ]}
+          />
+        </div>
+      </div>
+
+      <div className="bg-purple-50 border-2 border-purple-300 rounded-lg p-4">
+        <h3 className="font-semibold text-purple-900 mb-3 flex items-center gap-2">
+          <Package className="size-5" />
+          🎁 Benefícios (Globoplay / Skeelo)
+        </h3>
+
+        <ProcessCard
+          title="Validação e tratativa inicial"
+          icon={<Package className="w-4 h-4" />}
+          color="purple"
+          steps={[
+            'Verificar se o cliente realmente possui o benefício vinculado ao plano',
+            'Confirmar se o benefício já foi enviado para o e-mail cadastrado',
+            'Orientar o cliente a verificar caixa de entrada, lixo eletrônico e spam',
+            'Confirmar se o e-mail cadastrado está correto no sistema',
+            'Se houver divergência cadastral, orientar a correção conforme procedimento interno',
+            '➡️ Confirmado o não envio → Escalonar para a equipe de Plataformas via N2',
+          ]}
+        />
+
+        <div className="mt-4">
+          <ProcessCard
+            title="Escalonamento e acionamento"
+            icon={<AlertCircle className="w-4 h-4" />}
+            color="blue"
+            steps={[
+              'Encaminhar o caso para N2 com os dados do cliente e descrição da falha',
+              'Informar que o benefício não foi recebido após validação de caixa de entrada, spam e lixo eletrônico',
+              'Quando necessário, acionar o responsável via Alfredo no número +55 49 3199-2168 em horário comercial',
+              'Registrar no atendimento todas as validações feitas antes do acionamento',
+            ]}
+          />
+        </div>
+
+        <div className="mt-4">
+          <ProcessCard
+            title="Orientações importantes"
+            icon={<CheckCircle2 className="w-4 h-4" />}
+            color="yellow"
+            steps={[
+              'Sempre validar primeiro se o benefício faz parte do plano do cliente',
+              'Confirmar o e-mail correto antes de escalar',
+              'Evitar encaminhar sem validar spam, lixo eletrônico e não recebimento',
+              'Registrar com clareza se o caso é primeiro envio, reenvio ou falha de ativação',
+            ]}
+          />
+        </div>
+      </div>
+
+      <div className="bg-red-50 border-2 border-red-300 rounded-lg p-4">
+        <h3 className="font-semibold text-red-900 mb-3 flex items-center gap-2">
+          <Settings className="size-5" />
+          🖥️ TI / Plantão
+        </h3>
+
+        <ProcessCard
+          title="Validação e tratativa inicial"
+          icon={<Settings className="w-4 h-4" />}
+          color="red"
+          steps={[
+            'Utilizar este fluxo para quaisquer problemas sistêmicos, de infraestrutura ou indisponibilidade interna',
+            'Validar qual é o problema apresentado e qual sistema está impactado',
+            'Confirmar a mensagem de erro, comportamento do sistema e impacto operacional',
+            'Realizar testes para comprovar instabilidade ou falha',
+            'Coletar evidências como ping, traceroute, prints do sistema e mensagens de erro',
+            'Coletar os dados necessários para acionamento do plantonista ou responsável',
+            '➡️ Confirmada a falha → Acionar N2 responsável pelo sistema para abertura de OS e registro da ocorrência',
+          ]}
+        />
+
+        <div className="mt-4">
+          <ProcessCard
+            title="Escalonamento e acionamento"
+            icon={<AlertTriangle className="w-4 h-4" />}
+            color="purple"
+            steps={[
+              'Encaminhar o caso ao N2 responsável pelo sistema com os testes realizados',
+              'Solicitar abertura de OS com registro completo do ocorrido',
+              'Em horário comercial, acionar o responsável de TI conforme fluxo interno',
+              'Quando necessário, o acionamento do plantonista deve ser feito via SIG pelo N2 responsável',
+            ]}
+          />
+        </div>
+
+        <div className="mt-4">
+          <ProcessCard
+            title="Orientações importantes"
+            icon={<CheckCircle2 className="w-4 h-4" />}
+            color="yellow"
+            steps={[
+              'Sempre registrar o nome do sistema afetado',
+              'Descrever exatamente o erro apresentado e o impacto na operação',
+              'Não escalar sem evidências mínimas da falha',
+              'Encaminhar com prints e testes para agilizar o atendimento do N2',
+            ]}
+          />
+        </div>
+      </div>
     </div>
-
-    <div className="mt-4">
-      <ProcessCard
-        title="Possíveis alternativas"
-        icon={<Package className="w-4 h-4" />}
-        color="purple"
-        steps={[
-          'Oferecer ajuste técnico quando o motivo da insatisfação for falha no serviço',
-          'Oferecer upgrade ou downgrade de plano, quando aplicável',
-          'Reforçar benefícios do serviço contratado, quando fizer sentido no contexto',
-          'Encaminhar para retenção quando o cliente insistir no cancelamento ou o caso exigir negociação específica',
-        ]}
-      />
-    </div>
-  </div>
-
-  <div className="bg-purple-50 border-2 border-purple-300 rounded-lg p-4">
-    <h3 className="font-semibold text-purple-900 mb-3 flex items-center gap-2">
-      <AlertCircle className="size-5" />
-      📌 Orientações Importantes
-    </h3>
-
-    <div className="mt-4">
-      <ProcessCard
-        title="Boas práticas no atendimento"
-        icon={<AlertCircle className="w-4 h-4" />}
-        color="purple"
-        steps={[
-          'Registrar no protocolo o motivo exato da insatisfação do cliente',
-          'Evitar respostas secas ou encaminhamentos sem tentativa real de tratativa',
-          'Demonstrar empatia e segurança durante a condução do atendimento',
-          'Não prometer condições, descontos ou exceções fora do procedimento',
-          'Informar de forma clara tudo o que foi ofertado, validado ou recusado pelo cliente',
-          'Quando houver encaminhamento, registrar o máximo de detalhes para evitar retrabalho',
-        ]}
-      />
-    </div>
-  </div>
-
-  <div className="bg-yellow-50 border-2 border-yellow-300 rounded-lg p-4">
-    <h3 className="font-semibold text-yellow-900 mb-3 flex items-center gap-2">
-      <HandshakeIcon className="size-5" />
-      ⚠️ Regra de Ouro
-    </h3>
-
-    <div className="mt-4">
-      <ProcessCard
-        title="Antes de escalar para retenção"
-        icon={<HandshakeIcon className="w-4 h-4" />}
-        color="yellow"
-        steps={[
-          'Tentar resolver o problema principal do cliente',
-          'Reduzir o atrito durante a conversa',
-          'Validar possibilidade de ajuste de plano ou continuidade',
-          'Confirmar se ainda existe intenção de cancelamento após a tratativa',
-          'Persistindo o desejo de cancelamento ou impasse → Encaminhar para retenção',
-        ]}
-      />
-    </div>
-  </div>
-</div>
   );
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-3">Ⓜ️ MHNET | MANUAL DO ATENDIMENTO N1</h1>
-          <p className="text-gray-600">
-            Procedimentos Completos de Atendimento
-          </p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-3">
+            Ⓜ️ MHNET | MANUAL DO ATENDIMENTO N1
+          </h1>
+          <p className="text-gray-600">Procedimentos Completos de Atendimento</p>
         </div>
 
         <div className="flex flex-col items-center space-y-6">
@@ -807,7 +960,7 @@ const getRetencaoContent = () => (
             <p className="text-sm text-gray-600">Estrutura principal:</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 w-full max-w-6xl">
             <div className="flex flex-col items-center space-y-4">
               <FlowchartNode
                 title="🔧 Suporte Técnico"
@@ -849,6 +1002,20 @@ const getRetencaoContent = () => (
                 <p className="text-xs text-red-700">Reclamações</p>
               </div>
             </div>
+
+            <div className="flex flex-col items-center space-y-4">
+              <FlowchartNode
+                title="🧩 Conteúdos N2"
+                type="process"
+                onClick={() => setActiveDetail('n2')}
+                icon={<BookOpen className="size-5" />}
+              />
+              <FlowConnector vertical label="Clique para detalhes" />
+              <div className="bg-indigo-50 border border-indigo-200 rounded p-3 text-center">
+                <p className="text-xs text-indigo-900">Domínio, E-mail, Site</p>
+                <p className="text-xs text-indigo-700">Benefícios, TI, Plantão</p>
+              </div>
+            </div>
           </div>
 
           <FlowConnector vertical />
@@ -867,7 +1034,9 @@ const getRetencaoContent = () => (
             <p className="text-sm text-gray-700 mb-2">
               • <strong>Encaminhado para:</strong>
             </p>
-            <p className="text-xs text-gray-600">Técnico campo • N2 • Financeiro • Retenção</p>
+            <p className="text-xs text-gray-600">
+              Técnico campo • N2 • Financeiro • Retenção • Plataformas • TI / Plantão
+            </p>
           </div>
 
           <div className="bg-white border-2 border-gray-300 rounded-lg p-6 max-w-md shadow-lg mt-8">
@@ -877,10 +1046,11 @@ const getRetencaoContent = () => (
               <div>↓</div>
               <div>Triagem</div>
               <div>↓</div>
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                 <span className="text-blue-600">Suporte Técnico</span>
                 <span className="text-green-600">Financeiro</span>
                 <span className="text-red-600">Retenção</span>
+                <span className="text-indigo-600">Conteúdos N2</span>
               </div>
               <div>↓</div>
               <div>Solução / Encaminhamento</div>
@@ -907,6 +1077,13 @@ const getRetencaoContent = () => (
         title="🧠 Fluxo de Retenção"
         content={getRetencaoContent()}
         isOpen={activeDetail === 'retencao'}
+        onClose={() => setActiveDetail(null)}
+      />
+
+      <DetailPanel
+        title="🧩 Conteúdos N2"
+        content={getN2Content()}
+        isOpen={activeDetail === 'n2'}
         onClose={() => setActiveDetail(null)}
       />
     </div>
