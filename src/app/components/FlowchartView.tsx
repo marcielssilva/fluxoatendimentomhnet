@@ -924,7 +924,7 @@ export function FlowchartView() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-3">
-            Ⓜ️ MHNET | MANUAL DO ATENDIMENTO N1
+            Ⓜ️ MHNET | MANUAL DO ATENDIMENTO
           </h1>
           <p className="text-gray-600">Procedimentos Completos de Atendimento</p>
         </div>
