@@ -75,49 +75,82 @@ export function FlowchartView() {
         </h3>
 
         <ProcessCard
-          title="Validação inicial"
-          icon={<WifiOff className="w-4 h-4" />}
-          color="red"
-          steps={[
-            'Confirmar se a queda é total',
-            'Validar cabos de energia e fibra/rede',
-            'Verificar LED Power, PON e LOS da ONU',
-            'Confirmar se o equipamento foi reiniciado',
-            'Validar se o cliente testou conexão cabeada, quando possível',
-          ]}
-        />
+    title="Validação inicial"
+    icon={<WifiOff className="w-4 h-4" />}
+    color="red"
+    steps={[
+      'Confirmar se o cliente está realmente sem conexão total',
+      'Verificar se as faturas estão em dia e se há bloqueio no contrato',
+      'Validar se os cabos estão corretamente conectados e fixos',
+      'Confirmar como estão as luzes da ONU/roteador',
+      'Verificar se o nome da rede aparece para o cliente',
+    ]}
+  />
+
+         <div className="mt-4">
+    <ProcessCard
+      title="Análise técnica"
+      icon={<Wrench className="w-4 h-4" />}
+      color="blue"
+      steps={[
+        'Verificar no sistema se o caso é link loss, fibra atenuada ou dying gasp',
+        'Validar o sinal da fibra no UNM/U2000, priorizando essas ferramentas quando houver divergência',
+        'Se estiver como “sem energia” no AutoISP e dying gasp no UNM/U2000, confirmar com o cliente se a ONU está ligada',
+        'Solicitar foto do equipamento, validar luzes acesas e orientar teste em outra tomada quando necessário',
+        'Se a rede não retornar após as validações, seguir para reprovisionamento ou visita técnica conforme o cenário',
+      ]}
+    />
+  </div>
+
+         <div className="mt-4">
+    <ProcessCard
+      title="Reprovisionamento da ONU"
+      icon={<Settings className="w-4 h-4" />}
+      color="purple"
+      steps={[
+        'Realizar reprovisionamento apenas em casos de perda de registro da ONU',
+        'A perda de registro é caracterizada pela luz PON piscando continuamente',
+        'Antes de reprovisionar, validar se a ONU está em modo Bridge ou Router',
+        'Se o PPPoE estiver no roteador, utilizar Bridge; se estiver na ONU, utilizar Router',
+        'No AutoISP, conferir as informações cadastradas, a tag ACS como “minimal” e então reprovisionar a ONU',
+      ]}
+    />
+  </div>
 
         <div className="mt-4">
-          <ProcessCard
-            title="Análise e tratativa"
-            icon={<Wrench className="w-4 h-4" />}
-            color="blue"
-            steps={[
-              'Analisar sinal e status do equipamento',
-              'Verificar indisponibilidade/massiva na região',
-              'Aplicar testes básicos e acesso remoto, se disponível',
-              'Se normalizar, orientar cliente e confirmar funcionamento',
-              '➡️ Persistindo a falha → Encaminhar para visita técnica',
-            ]}
-          />
-        </div>
+    <ProcessCard
+      title="Orientações importantes"
+      icon={<AlertCircle className="w-4 h-4" />}
+      color="yellow"
+      steps={[
+        'Se houver bloqueio financeiro, seguir primeiro com o procedimento de desbloqueio',
+        'Fibra OK: valor menor que -25 e diferença menor que -5 entre os sinais',
+        'Fibra atenuada: valor maior que -25 ou diferença maior que -5 entre os sinais',
+        'Se o nome da rede não aparecer, orientar o cliente a pressionar 1 vez o botão WPS e validar se a rede volta',
+        'Se houver luz vermelha ou apagada no equipamento, seguir a análise das luzes antes de encerrar ou escalar',
+      ]}
+    />
+  </div>
 
         <div className="mt-4">
-          <ProcessCard
-            title="Orientações importantes"
-            icon={<Wrench className="w-4 h-4" />}
-            color="yellow"
-            steps={[
-              'Se LED LOS estiver vermelho/piscando, priorizar análise de fibra/sinal',
-              'Se houver parada geral/regional, informar indisponibilidade ao cliente',
-              'Sempre confirmar no final se a conexão voltou antes de encerrar o atendimento',
-            ]}
-          />
-        </div>
+    <ProcessCard
+      title="Quando abrir visita técnica"
+      icon={<Wrench className="w-4 h-4" />}
+      color="green"
+      steps={[
+        'Abrir visita técnica somente se os passos anteriores não resolverem o problema',
+        'Registrar no atendimento todas as verificações e procedimentos realizados',
+        'Informar contato e localização corretamente para a equipe técnica',
+        'Utilizar o script do ERP no relato do atendimento',
+        'Sempre informar o cliente sobre possíveis custos da visita técnica',
+      ]}
+    />
+  </div>
+        
 
         <div className="mt-4 flex justify-center">
-          <TrainingLink href="https://drive.google.com/file/d/18Otbn-FaeE-ZHeOHOk46ghMA_jlYL1My/view?usp=sharing">
-            🔗 Treinamento - LED&apos;s da ONU
+          <TrainingLink href="https://www.canva.com/design/DAG8UuszgF0/CLJjbHymUnA4z219pDKr5w/edit">
+            🔗 SEM CONEXÃO – FIBRA
           </TrainingLink>
         </div>
       </div>
