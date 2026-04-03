@@ -27,6 +27,8 @@ import {
   ExternalLink,
   Monitor,
   BookOpen,
+  Activity,
+  Router,
 } from 'lucide-react';
 
 type DetailView = 'tecnico' | 'financeiro' | 'retencao' | 'n2' | null;
@@ -75,78 +77,77 @@ export function FlowchartView() {
         </h3>
 
         <ProcessCard
-    title="Validação inicial"
-    icon={<WifiOff className="w-4 h-4" />}
-    color="red"
-    steps={[
-      'Confirmar se o cliente está realmente sem conexão total',
-      'Verificar se as faturas estão em dia e se há bloqueio no contrato',
-      'Validar se os cabos estão corretamente conectados e fixos',
-      'Confirmar como estão as luzes da ONU/roteador',
-      'Verificar se o nome da rede aparece para o cliente',
-    ]}
-  />
-
-         <div className="mt-4">
-    <ProcessCard
-      title="Análise técnica"
-      icon={<Wrench className="w-4 h-4" />}
-      color="blue"
-      steps={[
-        'Verificar no sistema se o caso é link loss, fibra atenuada ou dying gasp',
-        'Validar o sinal da fibra no UNM/U2000, priorizando essas ferramentas quando houver divergência',
-        'Se estiver como “sem energia” no AutoISP e dying gasp no UNM/U2000, confirmar com o cliente se a ONU está ligada',
-        'Solicitar foto do equipamento, validar luzes acesas e orientar teste em outra tomada quando necessário',
-        'Se a rede não retornar após as validações, seguir para reprovisionamento ou visita técnica conforme o cenário',
-      ]}
-    />
-  </div>
-
-         <div className="mt-4">
-    <ProcessCard
-      title="Reprovisionamento da ONU"
-      icon={<Settings className="w-4 h-4" />}
-      color="purple"
-      steps={[
-        'Realizar reprovisionamento apenas em casos de perda de registro da ONU',
-        'A perda de registro é caracterizada pela luz PON piscando continuamente',
-        'Antes de reprovisionar, validar se a ONU está em modo Bridge ou Router',
-        'Se o PPPoE estiver no roteador, utilizar Bridge; se estiver na ONU, utilizar Router',
-        'No AutoISP, conferir as informações cadastradas, a tag ACS como “minimal” e então reprovisionar a ONU',
-      ]}
-    />
-  </div>
+          title="Validação inicial"
+          icon={<WifiOff className="w-4 h-4" />}
+          color="red"
+          steps={[
+            'Confirmar se o cliente está realmente sem conexão total',
+            'Verificar se as faturas estão em dia e se há bloqueio no contrato',
+            'Validar se os cabos estão corretamente conectados e fixos',
+            'Confirmar como estão as luzes da ONU/roteador',
+            'Verificar se o nome da rede aparece para o cliente',
+          ]}
+        />
 
         <div className="mt-4">
-    <ProcessCard
-      title="Orientações importantes"
-      icon={<AlertCircle className="w-4 h-4" />}
-      color="yellow"
-      steps={[
-        'Se houver bloqueio financeiro, seguir primeiro com o procedimento de desbloqueio',
-        'Fibra OK: valor menor que -25 e diferença menor que -5 entre os sinais',
-        'Fibra atenuada: valor maior que -25 ou diferença maior que -5 entre os sinais',
-        'Se o nome da rede não aparecer, orientar o cliente a pressionar 1 vez o botão WPS e validar se a rede volta',
-        'Se houver luz vermelha ou apagada no equipamento, seguir a análise das luzes antes de encerrar ou escalar',
-      ]}
-    />
-  </div>
+          <ProcessCard
+            title="Análise técnica"
+            icon={<Wrench className="w-4 h-4" />}
+            color="blue"
+            steps={[
+              'Verificar no sistema se o caso é link loss, fibra atenuada ou dying gasp',
+              'Validar o sinal da fibra no UNM/U2000, priorizando essas ferramentas quando houver divergência',
+              'Se estiver como “sem energia” no AutoISP e dying gasp no UNM/U2000, confirmar com o cliente se a ONU está ligada',
+              'Solicitar foto do equipamento, validar luzes acesas e orientar teste em outra tomada quando necessário',
+              'Se a rede não retornar após as validações, seguir para reprovisionamento ou visita técnica conforme o cenário',
+            ]}
+          />
+        </div>
 
         <div className="mt-4">
-    <ProcessCard
-      title="Quando abrir visita técnica"
-      icon={<Wrench className="w-4 h-4" />}
-      color="green"
-      steps={[
-        'Abrir visita técnica somente se os passos anteriores não resolverem o problema',
-        'Registrar no atendimento todas as verificações e procedimentos realizados',
-        'Informar contato e localização corretamente para a equipe técnica',
-        'Utilizar o script do ERP no relato do atendimento',
-        'Sempre informar o cliente sobre possíveis custos da visita técnica',
-      ]}
-    />
-  </div>
-        
+          <ProcessCard
+            title="Reprovisionamento da ONU"
+            icon={<Settings className="w-4 h-4" />}
+            color="purple"
+            steps={[
+              'Realizar reprovisionamento apenas em casos de perda de registro da ONU',
+              'A perda de registro é caracterizada pela luz PON piscando continuamente',
+              'Antes de reprovisionar, validar se a ONU está em modo Bridge ou Router',
+              'Se o PPPoE estiver no roteador, utilizar Bridge; se estiver na ONU, utilizar Router',
+              'No AutoISP, conferir as informações cadastradas, a tag ACS como “minimal” e então reprovisionar a ONU',
+            ]}
+          />
+        </div>
+
+        <div className="mt-4">
+          <ProcessCard
+            title="Orientações importantes"
+            icon={<AlertCircle className="w-4 h-4" />}
+            color="yellow"
+            steps={[
+              'Se houver bloqueio financeiro, seguir primeiro com o procedimento de desbloqueio',
+              'Fibra OK: valor menor que -25 e diferença menor que -5 entre os sinais',
+              'Fibra atenuada: valor maior que -25 ou diferença maior que -5 entre os sinais',
+              'Se o nome da rede não aparecer, orientar o cliente a pressionar 1 vez o botão WPS e validar se a rede volta',
+              'Se houver luz vermelha ou apagada no equipamento, seguir a análise das luzes antes de encerrar ou escalar',
+            ]}
+          />
+        </div>
+
+        <div className="mt-4">
+          <ProcessCard
+            title="Quando abrir visita técnica"
+            icon={<Wrench className="w-4 h-4" />}
+            color="green"
+            steps={[
+              'Abrir visita técnica somente se os passos anteriores não resolverem o problema',
+              'Registrar no atendimento todas as verificações e procedimentos realizados',
+              'Informar contato e localização corretamente para a equipe técnica',
+              'Utilizar o script do ERP no relato do atendimento',
+              'Sempre informar o cliente sobre possíveis custos da visita técnica',
+            ]}
+          />
+        </div>
 
         <div className="mt-4 flex justify-center">
           <TrainingLink href="https://www.canva.com/design/DAG8UuszgF0/CLJjbHymUnA4z219pDKr5w/edit">
@@ -162,72 +163,70 @@ export function FlowchartView() {
         </h3>
 
         <ProcessCard
-    title="Identificação da falha"
-    icon={<Settings className="w-4 h-4" />}
-    color="yellow"
-    steps={[
-      'Confirmar com o cliente se é lentidão constante ou em horários específicos',
-      'Validar se ocorre em todos os dispositivos ou apenas em um',
-      'Identificar tipo de uso (streaming, jogos, downloads, etc)',
-    ]}
-  />
+          title="Identificação da falha"
+          icon={<Settings className="w-4 h-4" />}
+          color="yellow"
+          steps={[
+            'Confirmar com o cliente se é lentidão constante ou em horários específicos',
+            'Validar se ocorre em todos os dispositivos ou apenas em um',
+            'Identificar tipo de uso (streaming, jogos, downloads, etc)',
+          ]}
+        />
 
         <div className="mt-4">
-    <ProcessCard
-      title="Validações iniciais"
-      icon={<Wrench className="w-4 h-4" />}
-      color="blue"
-      steps={[
-        'Priorizar teste cabeado para validar se é problema de Wi-Fi ou link',
-        'Verificar cabos de rede e conexões físicas',
-        'Solicitar reinicialização do equipamento',
-        'Confirmar se há muitos dispositivos conectados simultaneamente',
-      ]}
-    />
-  </div>
-
-         <div className="mt-4">
-    <ProcessCard
-      title="Análise técnica"
-      icon={<Settings className="w-4 h-4" />}
-      color="purple"
-      steps={[
-        'Realizar acesso remoto e verificar consumo de banda',
-        'Validar sinal da fibra e estabilidade da conexão',
-        'Verificar se há indisponibilidade ou instabilidade na região',
-        'Identificar possível interferência Wi-Fi (paredes, distância, equipamentos)',
-      ]}
-    />
-  </div>
+          <ProcessCard
+            title="Validações iniciais"
+            icon={<Wrench className="w-4 h-4" />}
+            color="blue"
+            steps={[
+              'Priorizar teste cabeado para validar se é problema de Wi-Fi ou link',
+              'Verificar cabos de rede e conexões físicas',
+              'Solicitar reinicialização do equipamento',
+              'Confirmar se há muitos dispositivos conectados simultaneamente',
+            ]}
+          />
+        </div>
 
         <div className="mt-4">
-    <ProcessCard
-      title="Ajustes e tratativas"
-      icon={<Wrench className="w-4 h-4" />}
-      color="green"
-      steps={[
-        'Aplicar ajustes no roteador (Huawei / Flashman)',
-        'Orientar posicionamento correto do roteador (local central, sem barreiras)',
-        'Orientar troca de rede (2.4GHz ou 5GHz conforme cenário)',
-        'Orientar redução de dispositivos ou uso simultâneo quando necessário',
-      ]}
-    />
-  </div>
-
-        
+          <ProcessCard
+            title="Análise técnica"
+            icon={<Settings className="w-4 h-4" />}
+            color="purple"
+            steps={[
+              'Realizar acesso remoto e verificar consumo de banda',
+              'Validar sinal da fibra e estabilidade da conexão',
+              'Verificar se há indisponibilidade ou instabilidade na região',
+              'Identificar possível interferência Wi-Fi (paredes, distância, equipamentos)',
+            ]}
+          />
+        </div>
 
         <div className="mt-4">
-    <ProcessCard
-      title="Orientações importantes"
-      icon={<CheckCircle2 className="w-4 h-4" />}
-      color="yellow"
-      steps={[
-        'Se normalizar → validar funcionamento completo com o cliente',
-        'Registrar como o teste foi realizado (Wi-Fi ou cabo)',
-        '➡️ Persistindo a falha → Encaminhar para visita técnica',
-      ]}
-    />
-  </div>
+          <ProcessCard
+            title="Ajustes e tratativas"
+            icon={<Wrench className="w-4 h-4" />}
+            color="green"
+            steps={[
+              'Aplicar ajustes no roteador (Huawei / Flashman)',
+              'Orientar posicionamento correto do roteador (local central, sem barreiras)',
+              'Orientar troca de rede (2.4GHz ou 5GHz conforme cenário)',
+              'Orientar redução de dispositivos ou uso simultâneo quando necessário',
+            ]}
+          />
+        </div>
+
+        <div className="mt-4">
+          <ProcessCard
+            title="Orientações importantes"
+            icon={<CheckCircle2 className="w-4 h-4" />}
+            color="yellow"
+            steps={[
+              'Se normalizar → validar funcionamento completo com o cliente',
+              'Registrar como o teste foi realizado (Wi-Fi ou cabo)',
+              '➡️ Persistindo a falha → Encaminhar para visita técnica',
+            ]}
+          />
+        </div>
 
         <div className="mt-4 flex flex-col gap-2">
           <TrainingLink href="https://drive.google.com/file/d/1CK1rd6kSxggA6szUAjz2PzqcS14evP_9/view?usp=sharing">
@@ -248,88 +247,88 @@ export function FlowchartView() {
           📡 3.3 Via Rádio
         </h3>
 
-       <ProcessCard
-    title="Validação inicial"
-    icon={<WifiOff className="w-4 h-4" />}
-    color="orange"
-    steps={[
-      'Verificar se as faturas estão em dia (pode ser bloqueio)',
-      'Confirmar se o nome da rede está aparecendo',
-      'Validar se os cabos estão conectados corretamente',
-      'Verificar como estão as luzes dos equipamentos',
-      'Confirmar se o cliente está realmente sem conexão total',
-    ]}
-  />
-
-         <div className="mt-4">
-    <ProcessCard
-      title="Identificar se é cliente via rádio"
-      icon={<Settings className="w-4 h-4" />}
-      color="yellow"
-      steps={[
-        'Verificar no contrato/serviço se consta “Banda Larga”',
-        'Confirmar nas abas de conexões ou serviços do cliente',
-        'Validar se o cliente utiliza antena externa (via rádio)',
-      ]}
-    />
-  </div>
+        <ProcessCard
+          title="Validação inicial"
+          icon={<WifiOff className="w-4 h-4" />}
+          color="orange"
+          steps={[
+            'Verificar se as faturas estão em dia (pode ser bloqueio)',
+            'Confirmar se o nome da rede está aparecendo',
+            'Validar se os cabos estão conectados corretamente',
+            'Verificar como estão as luzes dos equipamentos',
+            'Confirmar se o cliente está realmente sem conexão total',
+          ]}
+        />
 
         <div className="mt-4">
-    <ProcessCard
-      title="Análise da torre (Zabbix)"
-      icon={<Activity className="w-4 h-4" />}
-      color="blue"
-      steps={[
-        'Localizar o concentrador ou IP do cliente no sistema',
-        'Acessar o Zabbix e pesquisar pela torre',
-        'Abrir os gráficos da torre',
-        'Verificar se a torre está OFFLINE (vermelho) ou OSCILANDO',
-        '➡️ Se estiver offline/oscilando → problema massivo (informar cliente)',
-      ]}
-    />
-  </div>
+          <ProcessCard
+            title="Identificar se é cliente via rádio"
+            icon={<Settings className="w-4 h-4" />}
+            color="yellow"
+            steps={[
+              'Verificar no contrato/serviço se consta “Banda Larga”',
+              'Confirmar nas abas de conexões ou serviços do cliente',
+              'Validar se o cliente utiliza antena externa (via rádio)',
+            ]}
+          />
+        </div>
 
         <div className="mt-4">
-    <ProcessCard
-      title="Acesso à antena do cliente"
-      icon={<Router className="w-4 h-4" />}
-      color="purple"
-      steps={[
-        'Tentar acesso via IP do cliente no navegador',
-        'Testar portas comuns: 8080, 8081, 8000, 443, 7070, 7071, 7000',
-        'Caso acesse, utilizar login conforme planilha de senhas',
-      ]}
-    />
-  </div>
-
-         <div className="mt-4">
-    <ProcessCard
-      title="Diagnóstico técnico da antena"
-      icon={<Settings className="w-4 h-4" />}
-      color="green"
-      steps={[
-        'Verificar modelo da antena',
-        'Identificar torre (ponto de acesso)',
-        'Validar distância até a torre',
-        'Analisar potência do sinal (ideal abaixo de -65 a -70)',
-        'Verificar CCQ (ideal próximo de 100%)',
-        'Verificar se há atualização disponível no equipamento',
-      ]}
-    />
-  </div>
+          <ProcessCard
+            title="Análise da torre (Zabbix)"
+            icon={<Activity className="w-4 h-4" />}
+            color="blue"
+            steps={[
+              'Localizar o concentrador ou IP do cliente no sistema',
+              'Acessar o Zabbix e pesquisar pela torre',
+              'Abrir os gráficos da torre',
+              'Verificar se a torre está OFFLINE (vermelho) ou OSCILANDO',
+              '➡️ Se estiver offline/oscilando → problema massivo (informar cliente)',
+            ]}
+          />
+        </div>
 
         <div className="mt-4">
-    <ProcessCard
-      title="Orientações importantes"
-      icon={<CheckCircle2 className="w-4 h-4" />}
-      color="yellow"
-      steps={[
-        'Se torre estiver normal → seguir fluxo padrão de atendimento',
-        'Se antena com problema → encaminhar para visita técnica',
-        'Registrar todos os testes realizados no atendimento',
-      ]}
-    />
-  </div>
+          <ProcessCard
+            title="Acesso à antena do cliente"
+            icon={<Router className="w-4 h-4" />}
+            color="purple"
+            steps={[
+              'Tentar acesso via IP do cliente no navegador',
+              'Testar portas comuns: 8080, 8081, 8000, 443, 7070, 7071, 7000',
+              'Caso acesse, utilizar login conforme planilha de senhas',
+            ]}
+          />
+        </div>
+
+        <div className="mt-4">
+          <ProcessCard
+            title="Diagnóstico técnico da antena"
+            icon={<Settings className="w-4 h-4" />}
+            color="green"
+            steps={[
+              'Verificar modelo da antena',
+              'Identificar torre (ponto de acesso)',
+              'Validar distância até a torre',
+              'Analisar potência do sinal (ideal abaixo de -65 a -70)',
+              'Verificar CCQ (ideal próximo de 100%)',
+              'Verificar se há atualização disponível no equipamento',
+            ]}
+          />
+        </div>
+
+        <div className="mt-4">
+          <ProcessCard
+            title="Orientações importantes"
+            icon={<CheckCircle2 className="w-4 h-4" />}
+            color="yellow"
+            steps={[
+              'Se torre estiver normal → seguir fluxo padrão de atendimento',
+              'Se antena com problema → encaminhar para visita técnica',
+              'Registrar todos os testes realizados no atendimento',
+            ]}
+          />
+        </div>
 
         <div className="mt-4">
           <ProcessCard
@@ -349,25 +348,25 @@ export function FlowchartView() {
         </div>
 
         <div className="mt-4">
-    <ProcessCard
-      title="Abertura de visita técnica"
-      icon={<Wrench className="w-4 h-4" />}
-      color="red"
-      steps={[
-        'Informar se a torre está funcionando ou não',
-        'Descrever diagnóstico completo (sinal, CCQ, equipamentos)',
-        'Informar se há acesso à antena do cliente',
-        'Confirmar se cliente está ciente de possíveis custos',
-        'Registrar dados completos para visita (contato, horário, referência)',
-      ]}
-    />
-  </div>
+          <ProcessCard
+            title="Abertura de visita técnica"
+            icon={<Wrench className="w-4 h-4" />}
+            color="red"
+            steps={[
+              'Informar se a torre está funcionando ou não',
+              'Descrever diagnóstico completo (sinal, CCQ, equipamentos)',
+              'Informar se há acesso à antena do cliente',
+              'Confirmar se cliente está ciente de possíveis custos',
+              'Registrar dados completos para visita (contato, horário, referência)',
+            ]}
+          />
+        </div>
 
-      <div className="mt-4 flex flex-col gap-2">
-    <TrainingLink href="https://www.canva.com/design/DAG8bdmt_-M/rdhEVlay-y4FMhURFoaCGw/edit">
-      🔗 SEM CONEXÃO VIA RÁDIO 
-    </TrainingLink>
-  </div>
+        <div className="mt-4 flex flex-col gap-2">
+          <TrainingLink href="https://www.canva.com/design/DAG8bdmt_-M/rdhEVlay-y4FMhURFoaCGw/edit">
+            🔗 SEM CONEXÃO VIA RÁDIO
+          </TrainingLink>
+        </div>
       </div>
 
       <div className="bg-indigo-50 border-2 border-indigo-300 rounded-lg p-4">
