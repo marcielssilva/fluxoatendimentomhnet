@@ -218,7 +218,7 @@ export function FlowchartView() {
 
         <div className="mt-4">
     <ProcessCard
-      title="Conclusão"
+      title="Orientações importantes"
       icon={<CheckCircle2 className="w-4 h-4" />}
       color="yellow"
       steps={[
@@ -248,21 +248,88 @@ export function FlowchartView() {
           📡 3.3 Via Rádio
         </h3>
 
-        <ProcessCard
-          title="Validação e tratativa inicial"
-          icon={<Radio className="w-4 h-4" />}
-          color="orange"
-          steps={[
-            'Confirmar com o cliente se a falha é sem conexão total, lentidão ou instabilidade',
-            'Validar se os equipamentos estão ligados corretamente e se houve reinicialização',
-            'Verificar no Zabbix o status da conexão e da torre responsável pelo atendimento',
-            'Confirmar se há indisponibilidade, alerta ou oscilação no ponto de atendimento',
-            'Validar nível de sinal, estabilidade do enlace e comportamento do equipamento, quando disponível',
-            'Se houver falha relacionada à torre ou rompimento de comunicação, orientar o cliente e registrar corretamente',
-            'Se normalizar durante o atendimento, confirmar teste final com o cliente',
-            '➡️ Persistindo a falha → Encaminhar para visita técnica ou setor responsável',
-          ]}
-        />
+       <ProcessCard
+    title="Validação inicial"
+    icon={<WifiOff className="w-4 h-4" />}
+    color="orange"
+    steps={[
+      'Verificar se as faturas estão em dia (pode ser bloqueio)',
+      'Confirmar se o nome da rede está aparecendo',
+      'Validar se os cabos estão conectados corretamente',
+      'Verificar como estão as luzes dos equipamentos',
+      'Confirmar se o cliente está realmente sem conexão total',
+    ]}
+  />
+
+         <div className="mt-4">
+    <ProcessCard
+      title="Identificar se é cliente via rádio"
+      icon={<Settings className="w-4 h-4" />}
+      color="yellow"
+      steps={[
+        'Verificar no contrato/serviço se consta “Banda Larga”',
+        'Confirmar nas abas de conexões ou serviços do cliente',
+        'Validar se o cliente utiliza antena externa (via rádio)',
+      ]}
+    />
+  </div>
+
+        <div className="mt-4">
+    <ProcessCard
+      title="Análise da torre (Zabbix)"
+      icon={<Activity className="w-4 h-4" />}
+      color="blue"
+      steps={[
+        'Localizar o concentrador ou IP do cliente no sistema',
+        'Acessar o Zabbix e pesquisar pela torre',
+        'Abrir os gráficos da torre',
+        'Verificar se a torre está OFFLINE (vermelho) ou OSCILANDO',
+        '➡️ Se estiver offline/oscilando → problema massivo (informar cliente)',
+      ]}
+    />
+  </div>
+
+        <div className="mt-4">
+    <ProcessCard
+      title="Acesso à antena do cliente"
+      icon={<Router className="w-4 h-4" />}
+      color="purple"
+      steps={[
+        'Tentar acesso via IP do cliente no navegador',
+        'Testar portas comuns: 8080, 8081, 8000, 443, 7070, 7071, 7000',
+        'Caso acesse, utilizar login conforme planilha de senhas',
+      ]}
+    />
+  </div>
+
+         <div className="mt-4">
+    <ProcessCard
+      title="Diagnóstico técnico da antena"
+      icon={<Settings className="w-4 h-4" />}
+      color="green"
+      steps={[
+        'Verificar modelo da antena',
+        'Identificar torre (ponto de acesso)',
+        'Validar distância até a torre',
+        'Analisar potência do sinal (ideal abaixo de -65 a -70)',
+        'Verificar CCQ (ideal próximo de 100%)',
+        'Verificar se há atualização disponível no equipamento',
+      ]}
+    />
+  </div>
+
+        <div className="mt-4">
+    <ProcessCard
+      title="Orientações importantes"
+      icon={<CheckCircle2 className="w-4 h-4" />}
+      color="yellow"
+      steps={[
+        'Se torre estiver normal → seguir fluxo padrão de atendimento',
+        'Se antena com problema → encaminhar para visita técnica',
+        'Registrar todos os testes realizados no atendimento',
+      ]}
+    />
+  </div>
 
         <div className="mt-4">
           <ProcessCard
@@ -281,13 +348,26 @@ export function FlowchartView() {
           />
         </div>
 
-        <div className="mt-4 flex justify-center">
-          <div className="bg-white p-3 rounded border border-purple-200">
-            <h4 className="font-semibold text-purple-900 mb-2 text-sm">
-              ⚙️ TREINAMENTO RADIO - Em Breve Material
-            </h4>
-          </div>
-        </div>
+        <div className="mt-4">
+    <ProcessCard
+      title="Abertura de visita técnica"
+      icon={<Wrench className="w-4 h-4" />}
+      color="red"
+      steps={[
+        'Informar se a torre está funcionando ou não',
+        'Descrever diagnóstico completo (sinal, CCQ, equipamentos)',
+        'Informar se há acesso à antena do cliente',
+        'Confirmar se cliente está ciente de possíveis custos',
+        'Registrar dados completos para visita (contato, horário, referência)',
+      ]}
+    />
+  </div>
+
+      <div className="mt-4 flex flex-col gap-2">
+    <TrainingLink href="https://www.canva.com/design/DAG8bdmt_-M/rdhEVlay-y4FMhURFoaCGw/edit">
+      🔗 SEM CONEXÃO VIA RÁDIO 
+    </TrainingLink>
+  </div>
       </div>
 
       <div className="bg-indigo-50 border-2 border-indigo-300 rounded-lg p-4">
