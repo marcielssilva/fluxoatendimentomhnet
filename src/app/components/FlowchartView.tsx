@@ -162,34 +162,72 @@ export function FlowchartView() {
         </h3>
 
         <ProcessCard
-          title="Validação e tratativa inicial"
-          icon={<Settings className="w-4 h-4" />}
-          color="yellow"
-          steps={[
-            'Verificar cabos',
-            'Teste cabo/Wi-Fi',
-            'Acesso remoto',
-            'Ajustes (Huawei / Flashman)',
-            '➡️ Persistindo → Visita técnica',
-          ]}
-        />
+    title="Identificação da falha"
+    icon={<Settings className="w-4 h-4" />}
+    color="yellow"
+    steps={[
+      'Confirmar com o cliente se é lentidão constante ou em horários específicos',
+      'Validar se ocorre em todos os dispositivos ou apenas em um',
+      'Identificar tipo de uso (streaming, jogos, downloads, etc)',
+    ]}
+  />
 
         <div className="mt-4">
-          <ProcessCard
-            title="Orientações importantes"
-            icon={<Wrench className="w-4 h-4" />}
-            color="purple"
-            steps={[
-              'Priorizar teste cabeado para diferenciar problema de Wi-Fi e problema de link',
-              'Confirmar se a reclamação é sobre lentidão constante ou em horários específicos',
-              'Verificar quantidade de dispositivos conectados e uso simultâneo de streaming, downloads ou jogos',
-              'Verificar cabos, conectores e reinicialização do equipamento',
-              'Realizar acesso remoto e validar consumo, sinal e estabilidade da conexão',
-              'Aplicar ajustes básicos no equipamento/roteador quando disponível (Huawei / Flashman)',
-              'Sempre registrar no atendimento como o teste foi realizado e qual foi o resultado informado pelo cliente',
-            ]}
-          />
-        </div>
+    <ProcessCard
+      title="Validações iniciais"
+      icon={<Wrench className="w-4 h-4" />}
+      color="blue"
+      steps={[
+        'Priorizar teste cabeado para validar se é problema de Wi-Fi ou link',
+        'Verificar cabos de rede e conexões físicas',
+        'Solicitar reinicialização do equipamento',
+        'Confirmar se há muitos dispositivos conectados simultaneamente',
+      ]}
+    />
+  </div>
+
+         <div className="mt-4">
+    <ProcessCard
+      title="Análise técnica"
+      icon={<Settings className="w-4 h-4" />}
+      color="purple"
+      steps={[
+        'Realizar acesso remoto e verificar consumo de banda',
+        'Validar sinal da fibra e estabilidade da conexão',
+        'Verificar se há indisponibilidade ou instabilidade na região',
+        'Identificar possível interferência Wi-Fi (paredes, distância, equipamentos)',
+      ]}
+    />
+  </div>
+
+        <div className="mt-4">
+    <ProcessCard
+      title="Ajustes e tratativas"
+      icon={<Wrench className="w-4 h-4" />}
+      color="green"
+      steps={[
+        'Aplicar ajustes no roteador (Huawei / Flashman)',
+        'Orientar posicionamento correto do roteador (local central, sem barreiras)',
+        'Orientar troca de rede (2.4GHz ou 5GHz conforme cenário)',
+        'Orientar redução de dispositivos ou uso simultâneo quando necessário',
+      ]}
+    />
+  </div>
+
+        
+
+        <div className="mt-4">
+    <ProcessCard
+      title="Conclusão"
+      icon={<CheckCircle2 className="w-4 h-4" />}
+      color="yellow"
+      steps={[
+        'Se normalizar → validar funcionamento completo com o cliente',
+        'Registrar como o teste foi realizado (Wi-Fi ou cabo)',
+        '➡️ Persistindo a falha → Encaminhar para visita técnica',
+      ]}
+    />
+  </div>
 
         <div className="mt-4 flex flex-col gap-2">
           <TrainingLink href="https://drive.google.com/file/d/1CK1rd6kSxggA6szUAjz2PzqcS14evP_9/view?usp=sharing">
