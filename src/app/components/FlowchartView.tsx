@@ -359,35 +359,85 @@ export function FlowchartView() {
         </h3>
 
         <ProcessCard
-          title="Validação e tratativa inicial"
+          title="Verificações iniciais"
           icon={<Settings className="w-4 h-4" />}
           color="blue"
           steps={[
-            'Identificar a necessidade do cliente: abertura de porta, troca de senha, ajuste de DNS ou configuração de rede',
-            'Confirmar modelo do equipamento (ONU / roteador) e acesso disponível (remoto ou local)',
-            'Validar se o cliente possui acesso ao equipamento ou se será necessário suporte remoto',
-            'Realizar acesso remoto quando disponível (Flashman, Huawei, etc)',
-            'Para abertura de porta: coletar porta, IP interno e tipo de protocolo (TCP/UDP)',
-            'Para troca de senha: orientar padrão de segurança e aplicar alteração no Wi-Fi',
-            'Para DNS: validar necessidade e aplicar DNS adequado conforme cenário',
-            'Aplicar ajustes necessários e salvar configurações',
-            'Solicitar teste com o cliente para validar funcionamento após alteração',
+            'Confirmar se o cliente deseja liberação de porta específica ou DMZ',
+            'Validar onde o plano autentica',
+            'Confirmar se o cliente possui IP válido',
+            'Identificar qual porta o cliente deseja liberar',
+            'Confirmar o IP interno do equipamento que receberá a liberação',
+            'Entender como os equipamentos estão conectados na rede do cliente',
           ]}
         />
 
         <div className="mt-4">
           <ProcessCard
-            title="Orientações importantes"
+            title="Identificar onde autentica"
             icon={<AlertCircle className="w-4 h-4" />}
             color="purple"
             steps={[
-              'Sempre confirmar com o cliente qual equipamento está sendo configurado',
-              'Em abertura de porta, garantir que o dispositivo esteja com IP fixo na rede',
-              'Validar se não há CGNAT antes de seguir com abertura de porta',
-              'Evitar múltiplas alterações simultâneas sem validação do cliente',
-              'Orientar o cliente a guardar a nova senha após alteração',
-              'Em caso de dúvidas ou limitações técnicas, escalar para o setor responsável',
-              'Registrar detalhadamente no atendimento todas as alterações realizadas',
+              'Validar a autenticação através do MACVendors',
+              'Roteadores como TP-Link, Intelbras, D-Link e Mercusys indicam autenticação no roteador',
+              'Huawei e Fiberhome podem indicar autenticação na ONU',
+              'Mikrotik/Routerboard indicam autenticação na Routerboard',
+              'Ubiquiti pode indicar autenticação na antena',
+            ]}
+          />
+        </div>
+
+        <div className="mt-4">
+          <ProcessCard
+            title="Quando autentica no roteador"
+            icon={<Wrench className="w-4 h-4" />}
+            color="green"
+            steps={[
+              'A liberação é mais simples e deve ser feita somente no roteador',
+              'Liberar a porta solicitada diretamente para o IP interno informado pelo cliente',
+              'Aplicar protocolo correto conforme necessidade (TCP, UDP ou ambos)',
+            ]}
+          />
+        </div>
+
+        <div className="mt-4">
+          <ProcessCard
+            title="Quando autentica na ONU ou antena"
+            icon={<Monitor className="w-4 h-4" />}
+            color="yellow"
+            steps={[
+              'Primeiro liberar a porta ou DMZ para o IP do roteador do cliente',
+              'Depois realizar a liberação da porta solicitada no roteador para o IP interno final',
+              'Confirmar que a cadeia de equipamentos está correta antes de concluir',
+            ]}
+          />
+        </div>
+
+        <div className="mt-4">
+          <ProcessCard
+            title="Quando autentica na Routerboard"
+            icon={<Settings className="w-4 h-4" />}
+            color="red"
+            steps={[
+              'Validar em qual faixa de rede está o equipamento do cliente',
+              'Se houver roteador atrás da Routerboard, primeiro liberar para o gateway/roteador',
+              'Depois liberar para o IP interno informado pelo cliente',
+              'Quando necessário, utilizar WinBox para acessar a Routerboard',
+              'No WinBox, configurar regra com Chain DSTNAT, protocolo correspondente, porta desejada e To Address para o IP do cliente',
+            ]}
+          />
+        </div>
+
+        <div className="mt-4">
+          <ProcessCard
+            title="Validação final"
+            icon={<CheckCircle2 className="w-4 h-4" />}
+            color="blue"
+            steps={[
+              'Validar a abertura da porta pelo site testeportas.com.br',
+              'Se a porta constar como inacessível, revisar todas as configurações aplicadas',
+              'Confirmar com o cliente se o equipamento ou servidor está corretamente configurado e ativo',
+              'Registrar no atendimento qual porta foi liberada, para qual IP e em qual equipamento foi feita a configuração',
             ]}
           />
         </div>
@@ -401,25 +451,42 @@ export function FlowchartView() {
         <div className="mt-4 bg-white border-2 border-indigo-200 rounded-lg p-4">
           <h4 className="font-semibold text-indigo-900 mb-3 flex items-center gap-2">
             <Monitor className="size-5" />
-            📺 MVNO / MHTV / DEOLHO
+            📺 Produtos e Plataformas
           </h4>
 
-          <div className="space-y-2 text-sm text-indigo-800 mb-4">
-            <p>• Telefonia móvel (MVNO)</p>
-            <p>• TV (MHTV)</p>
-            <p>• Câmeras (DeOlho)</p>
-          </div>
+          <p className="text-sm text-indigo-800 mb-4">
+            Materiais de apoio para atendimento de produtos digitais e serviços complementares.
+          </p>
 
-          <div className="flex flex-col gap-2">
-            <TrainingLink href="https://docs.google.com/presentation/d/1AsDCrX3VQHFMdym7062dnFA116N6b7C_/edit">
-              🔗 MVNO
-            </TrainingLink>
-            <TrainingLink href="https://drive.google.com/file/d/15OIxtD6mIbHmPQHyNxxn8ilJ1V1WM57R/view?usp=sharing">
-              🔗 Telefonia Móvel
-            </TrainingLink>
-            <TrainingLink href="https://docs.google.com/presentation/d/1WpSBW8hYPbf2pKY1FgftP2pxIgtJxINczOa9adVT5VQ/edit">
-              🔗 DeOlho MHNET
-            </TrainingLink>
+          <div className="space-y-4">
+            <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-3">
+              <h5 className="font-semibold text-indigo-900 text-sm mb-1">📱 MH Móvel / MVNO</h5>
+              <p className="text-sm text-indigo-800 mb-3">
+                Material sobre telefonia móvel, principais falhas em chamadas, SMS, dados
+                móveis, roaming e abertura de atendimento.
+              </p>
+              <div className="flex flex-col gap-2">
+                <TrainingLink href="https://docs.google.com/presentation/d/1AsDCrX3VQHFMdym7062dnFA116N6b7C_/edit">
+                  🔗 MVNO
+                </TrainingLink>
+                <TrainingLink href="https://drive.google.com/file/d/15OIxtD6mIbHmPQHyNxxn8ilJ1V1WM57R/view?usp=sharing">
+                  🔗 Treinamento Telefonia Móvel
+                </TrainingLink>
+              </div>
+            </div>
+
+            <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-3">
+              <h5 className="font-semibold text-indigo-900 text-sm mb-1">📷 De Olho MHNET</h5>
+              <p className="text-sm text-indigo-800 mb-3">
+                Guia de atendimento para câmera offline, falha no aplicativo, gravação,
+                lentidão, acesso bloqueado e critérios de escalonamento para N2.
+              </p>
+              <div className="flex flex-col gap-2">
+                <TrainingLink href="#">
+                  🔗 Reciclagem De Olho MH
+                </TrainingLink>
+              </div>
+            </div>
           </div>
         </div>
       </div>
