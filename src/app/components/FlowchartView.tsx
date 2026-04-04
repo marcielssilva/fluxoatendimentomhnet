@@ -826,61 +826,158 @@ export function FlowchartView() {
 
       <div className="mt-4">
         <ProcessCard
-          title="Atendimentos financeiros"
-          icon={<DollarSign className="w-4 h-4" />}
-          color="emerald"
-          steps={[
-            'Identificar a solicitação do cliente: boleto, pagamento, bloqueio, negociação ou dúvidas de faturamento',
-            'Validar situação financeira do cliente no sistema (faturas em aberto, vencimentos, histórico)',
-            'Confirmar com o cliente qual é a dúvida ou solicitação específica',
-            'Orientar o cliente conforme a situação identificada',
-            'Quando necessário, encaminhar para o setor responsável com as informações completas',
-          ]}
-        />
+    title="Renegociação de faturas"
+    icon={<RefreshCw className="w-4 h-4" />}
+    color="yellow"
+    steps={[
+      'Renegociação é a alteração da data de vencimento de uma fatura em atraso',
+      'O cliente pode solicitar a renegociação, sendo necessário abrir protocolo',
+      'Após abertura, transferir o cliente para o setor de cobrança (verificar horário de atendimento)',
+      'A fatura pode ser renegociada apenas uma vez',
+      'Após o vencimento da fatura renegociada, ocorre bloqueio administrativo automático',
+      'Não é permitido desbloqueio de confiança para faturas renegociadas',
+      'Fatura renegociada aparece na cor roxa e geralmente há um novo boleto acima dela',
+    ]}
+  />
       </div>
+
+       <div className="mt-4">
+    <ProcessCard
+      title="Solicitações financeiras"
+      icon={<FileText className="w-4 h-4" />}
+      color="blue"
+      steps={[
+        'Para dúvidas financeiras ou casos que não conseguimos resolver, abrir protocolo',
+        'Descrever corretamente a solicitação do cliente no atendimento',
+        'Classificar como financeiro → dúvidas financeiras ou cobrança',
+        'Deixar o protocolo em andamento',
+        'Não transferir o cliente nesses casos',
+        'Informar o número do protocolo e orientar o cliente a retornar para acompanhamento',
+      ]}
+    />
+  </div>
+
+       <div className="mt-4">
+    <ProcessCard
+      title="Bloqueios e desbloqueios"
+      icon={<Lock className="w-4 h-4" />}
+      color="red"
+      steps={[
+        'Bloqueio financeiro ocorre automaticamente após 7 dias de atraso',
+        'Bloqueio administrativo ocorre por renegociação vencida ou ausência de contrato',
+        'Bloqueio financeiro permite desbloqueio de confiança, quando disponível',
+        'Bloqueio administrativo não permite desbloqueio de confiança',
+        'Ambos podem ser desbloqueados mediante análise de comprovante',
+      ]}
+    />
+  </div>
+
+      
+
+     <div className="mt-4">
+    <ProcessCard
+      title="Análise de comprovantes"
+      icon={<CheckCircle2 className="w-4 h-4" />}
+      color="green"
+      steps={[
+        'Confirmar se o comprovante é de pagamento ou apenas agendamento',
+        'Comprovante de pagamento confirma que o valor já foi pago',
+        'Comprovante de agendamento não garante pagamento efetivo',
+        'Validar se o valor confere com a fatura',
+        'Conferir linha digitável (código de barras)',
+        'Validar data de vencimento no comprovante',
+        'Em caso de dúvidas, consultar o setor financeiro',
+      ]}
+    />
+  </div>
 
       <div className="mt-4">
-        <ProcessCard
-          title="Bloqueios"
-          icon={<Lock className="w-4 h-4" />}
-          color="red"
-          steps={[
-            'Bloqueio Administrativo: Quando uma fatura renegociada vence, é realizado o bloqueio do sinal, sendo liberado apenas mediante pagamento do débito',
-            'Bloqueio Financeiro: A partir do 5º dia após o vencimento da fatura, pode ocorrer bloqueio do serviço',
-            'O cliente possui direito a até 2 desbloqueios de confiança, com duração de 24 horas cada',
-            'Orientar o cliente sobre a regularização do débito para evitar novos bloqueios',
-            'Sempre registrar todo o atendimento via protocolo no ERP',
-          ]}
-        />
-      </div>
+    <ProcessCard
+      title="Prazos de compensação"
+      icon={<Clock className="w-4 h-4" />}
+      color="purple"
+      steps={[
+        'Boleto: até 24 a 48 horas úteis',
+        'Débito em conta: até 24 a 48 horas úteis',
+        'PIX: compensação imediata',
+        'Cartão de crédito: compensação imediata',
+        'Pagamentos em finais de semana ou feriados podem ter prazo maior',
+      ]}
+    />
+  </div>
 
-      <div className="mt-4">
-        <ProcessCard
-          title="Orientações importantes"
-          icon={<AlertCircle className="w-4 h-4" />}
-          color="purple"
-          steps={[
-            'Sempre confirmar os dados do cliente antes de informar valores ou situação financeira',
-            'Validar se há faturas vencidas antes de qualquer orientação',
-            'Registrar no atendimento todas as informações repassadas ao cliente',
-            'Evitar prometer prazos ou condições que não estejam confirmadas no sistema',
-            'Em caso de negociação ou exceção, seguir o procedimento interno ou escalar corretamente',
-          ]}
-        />
-      </div>
+       <div className="mt-4">
+    <ProcessCard
+      title="Desbloqueio após pagamento"
+      icon={<Unlock className="w-4 h-4" />}
+      color="blue"
+      steps={[
+        'Acessar dashboard no sistema (dashboard nova)',
+        'Localizar o contrato do cliente',
+        'Acessar utilitários → alterar situação',
+        'Alterar status de bloqueado para normal',
+        'Preencher justificativa do desbloqueio',
+        'Confirmar a alteração',
+        'Validar com o cliente se a conexão retornou',
+        'Anexar comprovante no protocolo e encerrar atendimento',
+      ]}
+    />
+  </div>
 
-      <div className="mt-4 bg-white border-2 border-orange-300 rounded-lg p-4">
-        <h3 className="font-semibold text-orange-900 mb-3 text-center">
-          📊 Material Geral Financeiro
-        </h3>
+       <div className="mt-4">
+    <ProcessCard
+      title="Descontos"
+      icon={<BadgePercent className="w-4 h-4" />}
+      color="green"
+      steps={[
+        'O desconto é um direito do cliente quando houve falha no serviço',
+        'Sem conexão: desconto de 100% do período',
+        'Lentidão: desconto de 50% do período',
+        'Problema deve estar resolvido antes de aplicar o desconto',
+        'Desconto é aplicado na próxima fatura',
+        'Caso cliente queira na fatura atual, abrir solicitação ao faturamento',
+        'Calcular valor: (valor do plano ÷ 30) × dias sem serviço',
+        'Para lentidão, dividir o valor por 2',
+      ]}
+    />
+  </div>
 
-        <div className="flex justify-center">
-          <TrainingLink href="https://docs.google.com/spreadsheets/d/1sMv4iIdCgKdP-dLo_3Figf-lNXcYkvxNmv1Ic3gx8fE/edit?usp=sharing">
-            🔗 Planilha Financeiro Completa
-          </TrainingLink>
-        </div>
-      </div>
-    </div>
+      
+
+     <div className="mt-4">
+    <ProcessCard
+      title="Aplicação de desconto"
+      icon={<Settings className="w-4 h-4" />}
+      color="yellow"
+      steps={[
+        'Acessar ações de atendimento → valores eventuais do contrato',
+        'Verificar se já existe desconto aplicado para evitar duplicidade',
+        'Adicionar novo desconto',
+        'Tipo: desconto',
+        'Competência: próxima competência',
+        'Evento: desconto por falha de conexão',
+        'Descrever dias e valor aplicado',
+        'Quantidade sempre será 1',
+        'Gerar valor eventual e vincular ao contrato',
+        'Registrar no protocolo e informar ao cliente',
+      ]}
+    />
+  </div>
+
+  <div className="mt-4 flex flex-col gap-2">
+    <TrainingLink href="https://www.canva.com/design/DAG8muG0kg4/ojXgmBd4pXG410kkSaL1EQ/edit">
+      🔗 Treinamento - Renegociação e Financeiro
+    </TrainingLink>
+
+    <TrainingLink href="https://www.canva.com/design/DAG8tOlcEVs/-iVudi5hVrzuw5DuUPA1EA/edit">
+      🔗 Treinamento - Desbloqueios e Comprovantes
+    </TrainingLink>
+
+    <TrainingLink href="https://www.canva.com/design/DAG9QznnlJg/Z1koYM93BmVXa1jsyocjUg/edit">
+      🔗 Treinamento - Descontos
+    </TrainingLink>
+  </div>
+</div>
   );
 
   const getRetencaoContent = () => (
