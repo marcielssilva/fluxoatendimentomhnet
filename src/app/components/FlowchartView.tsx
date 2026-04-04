@@ -498,175 +498,214 @@ export function FlowchartView() {
         </h3>
 
         <ProcessCard
-          title="Validação e tratativa inicial"
-          icon={<Phone className="w-4 h-4" />}
-          color="green"
-          steps={[
-            'Confirmar com o cliente qual é a falha apresentada: sem linha, sem receber chamadas, sem realizar chamadas, chiado, falha parcial ou instabilidade',
-            'Validar se o aparelho telefônico está corretamente conectado e energizado, quando aplicável',
-            'Testar cabo, porta TEL e conexão física do equipamento',
-            'Verificar no Tip Zeus o registro da linha e o status atual do serviço',
-            'Confirmar se a linha está registrada corretamente e sem bloqueios aparentes',
-            'Realizar testes básicos de chamadas, quando possível',
-            'Orientar o cliente a testar chamadas de entrada e saída',
-            'Se houver normalização, confirmar funcionamento completo antes de encerrar o atendimento',
-            '➡️ Persistindo a falha → Encaminhar para o setor de telefonia',
-          ]}
-        />
+    title="Validação inicial"
+    icon={<Phone className="w-4 h-4" />}
+    color="green"
+    steps={[
+      'Confirmar com o cliente qual é a falha: não recebe, não efetua, falha total, eco, picotando ou chamada muda',
+      'Validar se a conexão de internet do cliente está funcionando corretamente',
+      'Em fibra, verificar luz e qualidade do sinal; em rádio, validar CCQ e sinal do cliente',
+      'Confirmar se o telefone está conectado corretamente e energizado, quando aplicável',
+      'Orientar reinicialização dos equipamentos para eliminar travamentos',
+    ]}
+  />
+
+         <div className="mt-4">
+    <ProcessCard
+      title="Identificar a topologia da linha"
+      icon={<Settings className="w-4 h-4" />}
+      color="blue"
+      steps={[
+        'Confirmar com o cliente se o telefone está ligado diretamente na ONU ou se passa por ATA',
+        'Verificar se a linha autentica na ONU, ATA, roteador com função VoIP ou central do cliente',
+        'Em internet via rádio, considerar que a linha necessita de ATA',
+        'Quando o cliente estiver em ambiente empresarial com várias linhas, validar se a autenticação está na central do cliente',
+      ]}
+    />
+  </div>
+
+         <div className="mt-4">
+    <ProcessCard
+      title="Verificação de autenticação e registro"
+      icon={<Monitor className="w-4 h-4" />}
+      color="purple"
+      steps={[
+        'Consultar o número da linha nas informações do contrato, na aba de serviços',
+        'Validar no ZEUS se o número está registrado e identificar em qual equipamento a linha autentica',
+        'Se a autenticação estiver na ONU, verificar configuração da linha e senha conforme ZEUS',
+        'Confirmar o status de registro da linha; quando o registro falha, revisar senha, proxy, terminal e conectividade',
+      ]}
+    />
+  </div>
+
+         <div className="mt-4">
+    <ProcessCard
+      title="Testes básicos de telefonia"
+      icon={<PhoneCall className="w-4 h-4" />}
+      color="yellow"
+      steps={[
+        'Realizar teste de chamada de saída para número fixo e móvel',
+        'Realizar teste de recebimento de chamada',
+        'Confirmar se a falha ocorre em todos os números ou apenas em alguns destinos',
+        'Em falha parcial, coletar exemplos de números afetados para análise de rota com a operadora',
+        'Quando possível, testar com outro aparelho telefônico',
+      ]}
+    />
+  </div>
+
+         <div className="mt-4">
+    <ProcessCard
+      title="Possíveis causas"
+      icon={<AlertCircle className="w-4 h-4" />}
+      color="red"
+      steps={[
+        'Cabos de telefone ou rede desconectados, defeituosos ou em ordem incorreta',
+        'ATA travado, porta RJ11 com defeito ou cabo do ATA até o telefone muito longo',
+        'Problemas no aparelho telefônico do cliente',
+        'Perda de pacotes, ping oscilando, fibra atenuada, broadcast ou problemas de rede',
+        'Problemas de rota entre operadoras ou na operadora de destino',
+        'Cliente discando número inválido ou incorreto',
+      ]}
+    />
+  </div>
 
         <div className="mt-4">
-          <ProcessCard
-            title="Testes que podem ser realizados"
-            icon={<PhoneCall className="w-4 h-4" />}
-            color="blue"
-            steps={[
-              'Teste de chamada de saída para número fixo',
-              'Teste de chamada de saída para número móvel',
-              'Teste de recebimento de chamada',
-              'Validação de ausência de tom de linha',
-              'Teste com outro aparelho telefônico, quando possível',
-              'Validação da porta TEL e reinicialização do equipamento',
-              'Confirmação de registro da linha no Tip Zeus após reinício',
-            ]}
-          />
-        </div>
+    <ProcessCard
+      title="Encaminhamento"
+      icon={<Wrench className="w-4 h-4" />}
+      color="blue"
+      steps={[
+        'Se a linha estiver registrada e o problema persistir, encaminhar com o máximo de detalhes',
+        'Em falha parcial, informar exemplos de números, horários e comportamento da ligação',
+        'Registrar no atendimento todos os testes realizados e o resultado de cada um',
+        '➡️ Persistindo a falha → Encaminhar para o setor de telefonia',
+      ]}
+    />
+  </div>
 
-        <div className="mt-4">
-          <ProcessCard
-            title="Orientações importantes"
-            icon={<AlertCircle className="w-4 h-4" />}
-            color="purple"
-            steps={[
-              'Registrar no atendimento exatamente qual sintoma o cliente relatou',
-              'Sempre validar no Tip Zeus antes de concluir falha física ou encaminhamento',
-              'Confirmar se o problema ocorre em todas as chamadas ou apenas em números específicos',
-              'Quando possível, solicitar teste com outro aparelho para descartar defeito no telefone',
-              'Se houver chiado, falha intermitente ou ausência de áudio, registrar com detalhes',
-              'Informar no encaminhamento todos os testes realizados para evitar retrabalho',
-              'Antes de encerrar, confirmar com o cliente se as chamadas de entrada e saída estão funcionando normalmente',
-            ]}
-          />
-        </div>
-
-        <div className="mt-4 flex flex-col gap-2">
-          <TrainingLink href="https://drive.google.com/file/d/14_pc4AHfo43gxYEAFGWlndrFuYkMFg1V/view?usp=sharing">
-            🔗 Treinamento - Telefonia VOIP
-          </TrainingLink>
-        </div>
-      </div>
+  <div className="mt-4 flex flex-col gap-2">
+    <TrainingLink href="https://drive.google.com/file/d/14_pc4AHfo43gxYEAFGWlndrFuYkMFg1V/view?usp=sharing">
+      🔗 Treinamento - Telefonia VOIP
+    </TrainingLink>
+  </div>
+</div>
 
       <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-4">
         <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
           <Home className="size-5" />
           🏠 3.6 Mudança de Endereço
         </h3>
+        
+          <ProcessCard
+    title="Custos e regras"
+    icon={<DollarSign className="w-4 h-4" />}
+    color="blue"
+    steps={[
+      'Informar ao cliente a taxa padrão de mudança de endereço: R$ 100,00, com possibilidade de parcelamento em 2x de R$ 50,00',
+      'Informar também a cobrança de R$ 1,50 por metro excedente acima de 150 metros do ponto de acesso mais próximo',
+      'Se o cliente discordar da taxa e ameaçar cancelar, encaminhar para o setor de retenção',
+      'Menos de 6 meses de contrato: taxa integral',
+      '6 meses de contrato + últimas 6 faturas em dia: isenção de 50%',
+      '12 meses de contrato + últimas 12 faturas em dia + sem mudança nos últimos 12 meses: isento',
+      'Quando houver direito à isenção, informar que será necessária refidelização do contrato',
+    ]}
+  />
+
+       <div className="mt-4">
+    <ProcessCard
+      title="Validação de isenção"
+      icon={<CheckCircle2 className="w-4 h-4" />}
+      color="green"
+      steps={[
+        'Acessar no ERP a opção “Operações por cliente”',
+        'Pesquisar pelo CPF do cliente',
+        'Entrar no cadastro e acessar a aba “Financeiro”',
+        'Verificar se as últimas 6 ou 12 faturas foram pagas em dia',
+        'Relógio verde indica pagamento em dia; relógio vermelho indica atraso',
+        'Se houver direito à isenção, informar o cliente e seguir com a tratativa',
+      ]}
+    />
+  </div>
+
+         <div className="mt-4">
+    <ProcessCard
+      title="Confirmação do novo endereço"
+      icon={<MapPin className="w-4 h-4" />}
+      color="yellow"
+      steps={[
+        'Pesquisar o novo endereço no Google Maps',
+        'Enviar ao cliente a imagem/localização para confirmar se o ponto está correto',
+        'Salvar as coordenadas exibidas na barra de pesquisa para anexar ao protocolo',
+        'Anotar em bloco de notas as informações do endereço antigo e do novo endereço antes de concluir a solicitação',
+      ]}
+    />
+  </div>
+
+         <div className="mt-4">
+    <ProcessCard
+      title="Abertura da solicitação no ERP"
+      icon={<Settings className="w-4 h-4" />}
+      color="purple"
+      steps={[
+        'Selecionar no ERP a opção “Alterar endereço de instalação”',
+        'Preencher todos os dados do novo endereço informados pelo cliente',
+        'No campo tipo de residência, informar corretamente: madeira, alvenaria, mista ou apartamento',
+        'Após preencher, avançar para a etapa de viabilidade',
+      ]}
+    />
+  </div>
 
         <div className="mt-4">
-          <ProcessCard
-            title="Validação e tratativa inicial"
-            icon={<Home className="w-4 h-4" />}
-            color="blue"
-            steps={[
-              'Confirmar com o cliente o endereço atual e o novo endereço completo',
-              'Validar a viabilidade técnica no novo local de instalação',
-              'Confirmar se o cliente deseja apenas mudança de endereço ou se haverá alteração adicional no serviço',
-              'Orientar o cliente sobre a cobrança da taxa de mudança de endereço, quando aplicável',
-              'Verificar se o cliente possui isenção da taxa de mudança de endereço',
-              'Caso o cliente possua isenção, abrir protocolo para o financeiro solicitando a isenção da taxa',
-              'Registrar corretamente no atendimento todos os dados do novo endereço',
-              'Seguir com a abertura da solicitação conforme procedimento interno',
-              'Informar ao cliente os próximos passos e prazo de atendimento',
-            ]}
-          />
-        </div>
+    <ProcessCard
+      title="Viabilidade FTTH e FTTA"
+      icon={<Monitor className="w-4 h-4" />}
+      color="blue"
+      steps={[
+        'Para casa (FTTH): inserir as coordenadas, clicar em “desenhar drop”, ligar até a bolinha azul mais próxima e verificar a viabilidade',
+        'O desenho do drop deve seguir a rua e não pode passar por cima de casas',
+        'Para prédio (FTTA): selecionar apartamento, usar o ícone de prédio, localizar o prédio correto e verificar a disponibilidade do bloco',
+        'Se houver mais de um bloco no prédio, confirmar com o cliente qual é o correto',
+        'Na confirmação final, selecionar “Mudança de endereço” e prosseguir',
+      ]}
+    />
+  </div>
 
-        <div className="mt-4">
-          <ProcessCard
-            title="Orientações importantes"
-            icon={<AlertCircle className="w-4 h-4" />}
-            color="purple"
-            steps={[
-              'Sempre confirmar ponto de referência, número, bairro e complemento do novo endereço',
-              'Antes de seguir com a solicitação, validar se há cobertura no novo local',
-              'Quando houver isenção, o protocolo para o financeiro deve ser aberto no mesmo atendimento',
-              'Registrar no histórico que a isenção foi solicitada, para evitar cobranças indevidas',
-              'Se houver inviabilidade técnica no novo endereço, orientar o cliente de forma clara e registrar a informação',
-              'Evitar concluir a solicitação com dados incompletos ou sem conferência do endereço',
-              'Confirmar com o cliente telefone de contato atualizado para retorno e agendamento',
-            ]}
-          />
-        </div>
-
-        <div className="mt-4 space-y-4">
-          <div className="bg-white border-l-4 border-blue-500 p-3 rounded">
-            <h4 className="font-semibold text-blue-900 mb-2 text-sm">💰 Regras</h4>
-            <p className="text-sm text-blue-800">
-              • Taxa padrão: <strong>R$ 100,00</strong>
-            </p>
-            <p className="text-sm text-blue-800">
-              • Excedente: <strong>R$ 1,50/m</strong> acima de 150m
-            </p>
-            <p className="text-sm text-blue-800">
-              • Parcelamento: <strong>2x de R$ 50,00</strong>
-            </p>
-          </div>
-
-          <div className="bg-yellow-50 border-l-4 border-yellow-500 p-3 rounded">
-            <h4 className="font-semibold text-yellow-900 mb-2 text-sm">📊 Isenção</h4>
-            <div className="space-y-2 text-sm text-yellow-800">
-              <div className="flex items-start gap-2">
-                <XCircle className="size-4 mt-0.5 flex-shrink-0" />
-                <div>
-                  <strong>❌ {'<'} 6 meses →</strong> sem isenção
-                </div>
-              </div>
-
-              <div className="flex items-start gap-2">
-                <AlertTriangle className="size-4 mt-0.5 flex-shrink-0" />
-                <div>
-                  <strong>⚠️ 6–11 meses →</strong> 50%
-                </div>
-              </div>
-
-              <div className="flex items-start gap-2">
-                <CheckCircle2 className="size-4 mt-0.5 flex-shrink-0" />
-                <div>
-                  <strong>✅ 12+ meses →</strong> isento (com critérios)
-                </div>
-              </div>
-            </div>
-          </div>
+         <div className="mt-4">
+    <ProcessCard
+      title="Conclusão com viabilidade"
+      icon={<Wrench className="w-4 h-4" />}
+      color="green"
+      steps={[
+        'Após confirmar a viabilidade, clicar em OK e avançar',
+        'Na classificação, registrar todas as informações do endereço antigo e do novo endereço',
+        'Quando for mudança para prédio, identificar como FTTA no relato',
+        'Selecionar a equipe correta e deixar o protocolo em andamento',
+        'Se houver possibilidade de agendamento, encaminhar para equipe técnica de campo; caso contrário, encaminhar para O&M Ativação',
+      ]}
+    />
+  </div>
 
           <div className="mt-4">
-            <ProcessCard
-              title="Processo"
-              icon={<MapPin className="size-5" />}
-              color="blue"
-              steps={[
-                'Informar valores',
-                'Verificar ERP',
-                'Refidelização (se aplicável)',
-                'Confirmar endereço',
-                'Abrir solicitação',
-              ]}
-            />
-          </div>
+    <ProcessCard
+      title="Sem viabilidade"
+      icon={<AlertTriangle className="w-4 h-4" />}
+      color="red"
+      steps={[
+        'Considerar sem viabilidade quando não houver bolinha azul próxima, quando o drop indicar inviabilidade ou quando o prédio não aparecer na lista',
+        'Nesses casos, abrir solicitação para o setor de engenharia verificar possibilidade de instalação',
+        'Atualizar o endereço do cliente no cadastro antes do encaminhamento',
+        'Deixar o protocolo em andamento e encaminhar para a engenharia conforme fluxo interno',
+        'Informar ao cliente que o setor responsável irá verificar a viabilidade e retornará o contato',
+      ]}
+    />
+  </div>
 
-          <div className="bg-red-50 border-l-4 border-red-500 p-3 rounded">
-            <h4 className="font-semibold text-red-900 mb-2 text-sm">⚠️ Exceção</h4>
-            <p className="text-sm text-red-800">
-              ➡️ Cliente não aceita valor →{' '}
-              <strong>Retenção para continuar tratativa para evitar cancelamento</strong>
-            </p>
-          </div>
-
-          <div className="flex justify-center">
-            <TrainingLink href="https://docs.google.com/presentation/d/1WNziUMowWm4pRuA_oE3VS9hSOvN_dA_H2KZK38ePUdg/edit">
-              🔗 Treinamento - Mudança de Endereço
-            </TrainingLink>
-          </div>
-        </div>
-      </div>
+  <div className="mt-4 flex justify-center">
+    <TrainingLink href="https://docs.google.com/presentation/d/1WNziUMowWm4pRuA_oE3VS9hSOvN_dA_H2KZK38ePUdg/edit">
+      🔗 Treinamento - Mudança de Endereço
+    </TrainingLink>
+  </div>
+</div>
 
       <div className="bg-orange-50 border-2 border-orange-300 rounded-lg p-4">
         <h3 className="font-semibold text-orange-900 mb-3 flex items-center gap-2">
