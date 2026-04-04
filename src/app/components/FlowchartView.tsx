@@ -29,6 +29,11 @@ import {
   BookOpen,
   Activity,
   Router,
+  RefreshCw,
+  FileText,
+  Clock,
+  Unlock,
+  BadgePercent,
 } from 'lucide-react';
 
 type DetailView = 'tecnico' | 'financeiro' | 'retencao' | 'n2' | null;
