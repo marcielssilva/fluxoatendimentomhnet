@@ -704,6 +704,11 @@ export function FlowchartView() {
     <TrainingLink href="https://docs.google.com/presentation/d/1WNziUMowWm4pRuA_oE3VS9hSOvN_dA_H2KZK38ePUdg/edit">
       🔗 Treinamento - Mudança de Endereço
     </TrainingLink>
+ </div>
+     <div className="mt-4 flex flex-col gap-2">
+    <TrainingLink href="https://www.canva.com/design/DAG79e0fdyo/X8SWdhz_gfWr6AYJyHaYgg/edit">
+      🔗 Treinamento - Mudança de Endereço (NOVO)
+    </TrainingLink>
   </div>
 </div>
 
